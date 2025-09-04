@@ -191,7 +191,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            align-items: center;
+            align-items: start;
         }
 
         .about-text {
@@ -220,27 +220,9 @@
             border: 1px solid rgba(139, 115, 85, 0.2);
         }
 
-        /* Resume Section */
-        .resume-content {
-            text-align: center;
-        }
 
-        .resume-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #8b7355, #a08a6f);
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
-        }
 
-        .resume-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(139, 115, 85, 0.4);
-        }
+
 
         /* Classes/Projects Section */
         .projects-grid {
@@ -331,15 +313,25 @@
             margin-bottom: 1rem;
         }
 
-        .writing-card a {
-            display: inline-block;
+        .writing-card .writing-actions {
+            display: flex;
+            gap: 1rem;
             margin-top: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .writing-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 0.8rem 1.5rem;
             background: linear-gradient(135deg, #8b7355, #a08a6f);
             color: white;
             text-decoration: none;
             border-radius: 25px;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .writing-card a:hover {
@@ -407,7 +399,6 @@
             <div class="logo">Allen Jue</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#resume">Resume</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#writings">Writings</a></li>
             </ul>
@@ -461,22 +452,13 @@
                         <li style="margin-bottom: 0.8rem;">📚 Always Learning</li>
                     </ul>
                 </div>
+                
+
             </div>
         </div>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="section">
-        <div class="container">
-            <h2>Resume</h2>
-            <div class="resume-content">
-                <p style="font-size: 1.2rem; color: #6b5b47; margin-bottom: 2rem;">Download my full resume to learn more about my experience and qualifications.</p>
-                <a href="Master_resume.pdf" class="resume-btn" download>
-                    <i class="fas fa-download"></i> Download Resume
-                </a>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Projects Section -->
     <section id="projects" class="section">
@@ -486,28 +468,35 @@
                 <div class="project-card">
                     <h3>CS380S - Secure Systems</h3>
                     <p>Final project presentation and report on secure systems theory and practice. Explored advanced security concepts and implementations.</p>
-                    <div class="project-links">
-                      <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf" download>
-                        <i class="fas fa-file-pdf"></i> Report
-                    </a>
-                        <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S%20-%20Final%20Project%20Presentation.pptx" download>
-                            <i class="fas fa-file-powerpoint"></i> Presentation
+                                        <div class="project-links">
+                        <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf" target="_blank">
+                            <i class="fas fa-file-pdf"></i> View Report
                         </a>
-                      
+                        <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S%20-%20Final%20Project%20Presentation.pptx" target="_blank">
+                            <i class="fas fa-file-powerpoint"></i> View Presentation
+                        </a>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <h3>CS389R - Recursion & Induction</h3>
                     <p>Final project presentation and implementation in Common Lisp. Explored recursive algorithms and mathematical induction concepts.</p>
-                    <div class="project-links">
-                      <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp" download>
-                        <i class="fas fa-code"></i> Lisp Code
-                      </a>
-                        <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/CS389r%20-%20Final%20Presentations.pptx" download>
-                            <i class="fas fa-file-powerpoint"></i> Presentation
+                                        <div class="project-links">
+                        <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp" target="_blank">
+                            <i class="fas fa-code"></i> View Code
                         </a>
-                      
+                        <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/CS389r%20-%20Final%20Presentations.pptx" target="_blank">
+                            <i class="fas fa-file-powerpoint"></i> View Presentation
+                        </a>
+                        <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/CS389R___Final_Project_Presentation.pdf" target="_blank">
+                            <i class="fas fa-file-pdf"></i> View Report
+                        </a>
                     </div>
                 </div>
 
@@ -515,11 +504,14 @@
                     <h3>CS395T - Human-Computer Interaction</h3>
                     <p>Final project presentation and report on HCI principles and design. Focused on user experience and interface design.</p>
                     <div class="project-links">
-                        <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" download>
-                            <i class="fas fa-file-pdf"></i> Report
+                        <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" target="_blank">
+                            <i class="fas fa-file-pdf"></i> View Report
                         </a>
-                        <a href="Classes/CS395T%20-%20HCI/HCI%20-%20Final%20Presentation.pptx" download>
-                            <i class="fas fa-file-powerpoint"></i> Presentation
+                        <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <a href="Classes/CS395T%20-%20HCI/HCI%20-%20Final%20Presentation.pptx" target="_blank">
+                            <i class="fas fa-file-powerpoint"></i> View Presentation
                         </a>
                     </div>
                 </div>
@@ -528,8 +520,11 @@
                     <h3>EDP382C - Educational Psychology</h3>
                     <p>Macnamara presentation on educational psychology concepts and research findings.</p>
                     <div class="project-links">
+                        <a href="Classes/EDP382C%20-%20Educational%20Psychology/EDP%20382C%20-%20Macnamara.pptx" target="_blank">
+                            <i class="fas fa-file-powerpoint"></i> View Presentation
+                        </a>
                         <a href="Classes/EDP382C%20-%20Educational%20Psychology/EDP%20382C%20-%20Macnamara.pptx" download>
-                            <i class="fas fa-file-powerpoint"></i> Presentation
+                            <i class="fas fa-download"></i> Download
                         </a>
                     </div>
                 </div>
@@ -569,16 +564,26 @@
                 <div class="writing-card">
                     <h3>CTI 371M Term Paper</h3>
                     <p>Academic research paper exploring advanced topics in computer and information technology.</p>
-                    <a href="writings/CTI_371M___Term_Paper.pdf" download>
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
+                    <div class="writing-actions">
+                        <a href="writings/CTI_371M___Term_Paper.pdf" target="_blank">
+                            <i class="fas fa-file-pdf"></i> View PDF
+                        </a>
+                        <a href="writings/CTI_371M___Term_Paper.pdf" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
                 </div>
                 <div class="writing-card">
                     <h3>M333L Term Paper</h3>
                     <p>Mathematics research paper covering theoretical concepts and mathematical analysis.</p>
-                    <a href="writings/M333L___Term_Paper.pdf" download>
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
+                    <div class="writing-actions">
+                        <a href="writings/M333L___Term_Paper.pdf" target="_blank">
+                            <i class="fas fa-file-pdf"></i> View PDF
+                        </a>
+                        <a href="writings/M333L___Term_Paper.pdf" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -640,13 +645,13 @@
             }
         });
 
-        // Enhanced file download handling for GitHub Pages
-        document.querySelectorAll('a[download]').forEach(link => {
+        // Enhanced file handling for GitHub Pages
+        document.querySelectorAll('a[href*="Classes"], a[href*="writings"]').forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 const filename = href.split('/').pop();
                 
-                // Check if file exists before attempting download
+                // Check if file exists before attempting to open/download
                 fetch(href, { method: 'HEAD' })
                     .then(response => {
                         if (!response.ok) {

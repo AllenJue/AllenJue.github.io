@@ -46,7 +46,7 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: #8b7355;
         }
@@ -86,7 +86,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 120px 0 80px;
+            padding: 50px 0 40px;
             text-align: center;
             opacity: 0;
             transform: translateY(30px);
@@ -94,49 +94,49 @@
         }
 
         .hero-image {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1rem;
             border: 4px solid #d4c4a8;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2rem;
             color: #6b5b47;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-weight: 300;
         }
 
         .hero h2 {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             color: #8b7355;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             font-weight: 400;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             color: #6b5b47;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+            max-width: 500px;
+            margin: 0 auto 1rem;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background: rgba(139, 115, 85, 0.1);
             color: #8b7355;
             border-radius: 50%;
@@ -154,7 +154,7 @@
 
         /* Sections */
         .section {
-            padding: 80px 0;
+            padding: 50px 0;
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease;
@@ -166,9 +166,9 @@
         }
 
         .section h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #6b5b47;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             text-align: center;
             font-weight: 300;
             position: relative;
@@ -190,18 +190,22 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 2.5rem;
             align-items: start;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .about-text {
             font-size: 1.1rem;
             color: #6b5b47;
             line-height: 1.8;
+            text-align: center;
         }
 
         .about-text p {
             margin-bottom: 1.5rem;
+            text-align: left;
         }
 
         .skills {
@@ -209,6 +213,61 @@
             flex-wrap: wrap;
             gap: 1rem;
             margin-top: 2rem;
+            justify-content: center;
+        }
+
+        /* Books and Papers Section */
+        .books-papers {
+            margin-top: 2rem;
+        }
+
+        .book-list, .paper-list {
+            margin-bottom: 1rem;
+        }
+
+        .book-item, .paper-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .book-bullet, .paper-bullet {
+            color: #8b7355;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .book-title, .paper-title {
+            color: #6b5b47;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .book-author, .paper-authors {
+            color: #8b7355;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .paper-link {
+            color: #8b7355;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.2rem 0.6rem;
+            background: rgba(139, 115, 85, 0.1);
+            border-radius: 12px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(139, 115, 85, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .paper-link:hover {
+            background: #8b7355;
+            color: white;
+            transform: translateY(-1px);
         }
 
         .skill-tag {
@@ -227,15 +286,15 @@
         /* Classes/Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
         }
 
         .project-card {
             background: rgba(255, 255, 255, 0.7);
             border-radius: 15px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             border: 1px solid rgba(212, 196, 168, 0.3);
@@ -249,32 +308,32 @@
 
         .project-card h3 {
             color: #6b5b47;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
         }
 
         .project-card p {
             color: #6b5b47;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
         }
 
         .project-links {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             flex-wrap: wrap;
         }
 
         .project-links a {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
+            gap: 0.4rem;
+            padding: 0.4rem 0.8rem;
             background: rgba(139, 115, 85, 0.1);
             color: #8b7355;
             text-decoration: none;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            border-radius: 18px;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(139, 115, 85, 0.2);
         }
@@ -287,15 +346,15 @@
         /* Writings Section */
         .writings-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
         }
 
         .writing-card {
             background: rgba(255, 255, 255, 0.7);
             border-radius: 15px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             border: 1px solid rgba(212, 196, 168, 0.3);
@@ -383,6 +442,101 @@
             
             .container {
                 padding: 0 15px;
+            }
+        }
+
+        /* Horizontal Timeline for Reading List */
+        .horizontal-timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            margin: 3rem 0;
+            padding: 0 2rem;
+        }
+
+        .horizontal-timeline::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 2rem;
+            right: 2rem;
+            height: 2px;
+            background: #8b7355;
+            z-index: 1;
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            max-width: 150px;
+        }
+
+        .timeline-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #8b7355;
+            border: 3px solid #f5f5dc;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(139, 115, 85, 0.3);
+        }
+
+        .timeline-content {
+            text-align: center;
+        }
+
+        .timeline-content h3 {
+            font-size: 0.9rem;
+            color: #6b5b47;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .timeline-content .author {
+            font-size: 0.8rem;
+            color: #8b7355;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .timeline-content .paper-link {
+            display: inline-block;
+            font-size: 0.7rem;
+            color: #8b7355;
+            text-decoration: none;
+            padding: 0.3rem 0.6rem;
+            background: rgba(139, 115, 85, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(139, 115, 85, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content .paper-link:hover {
+            background: #8b7355;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Responsive timeline */
+        @media (max-width: 768px) {
+            .horizontal-timeline {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+            
+            .horizontal-timeline::before {
+                display: none;
+            }
+            
+            .timeline-item {
+                max-width: 200px;
             }
         }
 
@@ -506,38 +660,98 @@
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
+              
                 <div class="about-text">
                     <p>I'm a graduate student at UT Austin studying Computer Science and Mathematics in the integrated master's program. My academic focus lies in computer systems, theory, and secure systems.</p>
                     <p>I play speed chess. I'm proud to be in the 95th percentile on Lichess and 99.7th percentile on Chess.com in bullet chess.</p>
                     <p>I'm passionate about learning and exploring new technologies. If you have exciting opportunities or just want to discuss interesting problems, feel free to reach out.</p>
                     
-                    <div class="skills">
-                        <span class="skill-tag">Computer Systems</span>
-                        <span class="skill-tag">Theory</span>
-                        <span class="skill-tag">Secure Systems</span>
-                        <span class="skill-tag">Mathematics</span>
-                        <span class="skill-tag">WebAssembly</span>
-                        <span class="skill-tag">Common Lisp</span>
-                        <span class="skill-tag">Machine Learning</span>
-                    </div>
+                  
                 </div>
                 <div class="about-text">
-                    <h3 style="color: #6b5b47; margin-bottom: 1rem;">Quick Facts</h3>
-                    <ul style="list-style: none; color: #6b5b47;">
+                    <h3 style="color: #6b5b47; margin-bottom: 1rem; text-align: right;">Quick Facts</h3>
+                    <ul style="list-style: none; color: #6b5b47; text-align: right;">
                         <li style="margin-bottom: 0.8rem;">🎓 UT Austin Integrated MS Program</li>
                         <li style="margin-bottom: 0.8rem;">🔒 CS380S: Theory and Practice of Secure Systems</li>
                         <li style="margin-bottom: 0.8rem;">🔄 CS389R: Recursion and Induction</li>
                         <li style="margin-bottom: 0.8rem;">👥 CS395T: Human-Computer Interaction</li>
                         <li style="margin-bottom: 0.8rem;">♟️ Chess Enthusiast (99.7% Chess.com)</li>
                     </ul>
+                    </div>
+
                 </div>
-                
+                <div class="skills">
+                  <span class="skill-tag">Computer Systems</span>
+                  <span class="skill-tag">Theory</span>
+                  <span class="skill-tag">Secure Systems</span>
+                  <span class="skill-tag">Mathematics</span>
+                  <span class="skill-tag">WebAssembly</span>
+                  <span class="skill-tag">Common Lisp</span>
+                  <span class="skill-tag">Machine Learning</span>
+              </div>
 
             </div>
         </div>
     </section>
 
-
+    <!-- Reading List Section -->
+    <section class="section">
+        <div class="container">
+            <h2>Reading List</h2>
+            <div class="horizontal-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-circle"></div>
+                    <div class="timeline-content">
+                        <h3>Teacher Man</h3>
+                        <p class="author">Frank McCourt</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-circle"></div>
+                    <div class="timeline-content">
+                        <h3>Flowers for Algernon</h3>
+                        <p class="author">Daniel Keyes</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-circle"></div>
+                    <div class="timeline-content">
+                        <h3>The Phantom Tollbooth</h3>
+                        <p class="author">Norton Juster</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-circle"></div>
+                    <div class="timeline-content">
+                        <h3>Re: CAPTCHAs</h3>
+                        <p class="author">Marti Motoyama et al.</p>
+                        <a href="https://www.usenix.org/legacy/event/sec10/tech/full_papers/Motoyama.pdf" target="_blank" class="paper-link">PDF</a>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-circle"></div>
+                    <div class="timeline-content">
+                        <h3>VOYAGER</h3>
+                        <p class="author">VOYAGER Team</p>
+                        <a href="https://arxiv.org/pdf/2305.16291" target="_blank" class="paper-link">PDF</a>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-circle"></div>
+                    <div class="timeline-content">
+                        <h3>As We May Think</h3>
+                        <p class="author">Vannevar Bush</p>
+                        <a href="https://dl.acm.org/doi/abs/10.1145/227181.227186" target="_blank" class="paper-link">PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Projects Section -->
     <section id="projects" class="section">
@@ -545,9 +759,12 @@
             <h2>Classes & Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>CS380S - Secure Systems</h3>
-                    <p>Final project presentation and report on secure systems theory and practice. Explored advanced security concepts and implementations.</p>
+                    <h3>CS380S - Wasm2c Memory Trace Metrics</h3>
+                    <p>Discovered redundant memory checks in code transpiled by Wasm2c by implementing memory traces.</p>
                                         <div class="project-links">
+                        <a href="https://github.com/AllenJue/wasm2c-memorytrace" target="_blank">
+                          <i class="fab fa-github"></i> wasm2c-memorytrace
+                      </a>
                         <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf" target="_blank">
                             <i class="fas fa-file-pdf"></i> View PDF
                         </a>
@@ -557,16 +774,17 @@
                         <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S%20-%20Final%20Project%20Presentation.pptx" target="_blank">
                             <i class="fas fa-file-powerpoint"></i> View Presentation
                         </a>
+                        
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>CS389R - Recursion & Induction</h3>
-                    <p>Final project presentation and implementation in Common Lisp. Explored recursive algorithms and mathematical induction concepts.</p>
+                    <h3>CS389R - Proof of TEA Cipher.</h3>
+                    <p>Utilized ACL2 to prove the correctness of the TEA cipher algorithm.</p>
                                         <div class="project-links">
-                        <a href="#" class="view-code-btn" data-file="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp">
-                            <i class="fas fa-code"></i> View Code
-                        </a>
+                        <a href="https://github.com/AllenJue/CryptACL2" target="_blank">
+                          <i class="fab fa-github"></i> CryptACL2
+                      </a>
                         <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp" download>
                             <i class="fas fa-download"></i> Download
                         </a>
@@ -580,8 +798,8 @@
                 </div>
 
                 <div class="project-card">
-                    <h3>CS395T - Human-Computer Interaction</h3>
-                    <p>Final project presentation and report on HCI principles and design. Focused on user experience and interface design.</p>
+                    <h3>CS395T - LLM-based Auto-Highlighting Reader</h3>
+                    <p>Designed a UI that uses LLMs to automatically highlight important parts of a text and tested users comprehension with the tool. </p>
                     <div class="project-links">
                         <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" target="_blank">
                             <i class="fas fa-file-pdf"></i> View PDF
@@ -608,18 +826,19 @@
                     </div>
                 </div>
 
+
                 <div class="project-card">
-                    <h3>GitHub Projects</h3>
-                    <p>Check out my open-source contributions and personal projects on GitHub, including WebAssembly tools and cryptographic implementations.</p>
+                    <h3>CS378 - C/C++ Threadpool Implementation</h3>
+                    <p>Advanced concurrency concepts and thread pool implementation. Explored multi-threading, synchronization, and concurrent programming patterns.</p>
                     <div class="project-links">
-                        <a href="https://github.com/AllenJue/wasm2c-memorytrace" target="_blank">
-                            <i class="fab fa-github"></i> wasm2c-memorytrace
+                        <a href="https://github.com/AllenJue/threadpool" target="_blank">
+                            <i class="fab fa-github"></i> Thread Pool Implementation
                         </a>
-                        <a href="https://github.com/AllenJue/CryptACL2" target="_blank">
-                            <i class="fab fa-github"></i> CryptACL2
+                        <a href="Classes/CS378%20-%20Concurrency/CS378___Final_Report.pdf" target="_blank">
+                            <i class="fas fa-file-pdf"></i> View PDF
                         </a>
-                        <a href="https://github.com/AllenJue/TEA-ACL2" target="_blank">
-                            <i class="fab fa-github"></i> TEA-ACL2
+                        <a href="Classes/CS378%20-%20Concurrency/CS378___Final_Report.pdf" download>
+                            <i class="fas fa-download"></i> Download
                         </a>
                     </div>
                 </div>
@@ -630,41 +849,75 @@
     <!-- Writings Section -->
     <section id="writings" class="section">
         <div class="container">
-            <h2>Academic Writings</h2>
+            <h2>Personal Writings</h2>
+
+            
             <div class="writings-grid">
+
+              <div class="writing-card">
+                <h3>Cryptography Throughout History (May 2025)</h3>
+                <p>Academic research paper exploring the history of cryptography.</p>
+                <div class="project-links">
+                    <a href="writings/CTI_371M___Term_Paper.pdf" target="_blank">
+                        <i class="fas fa-file-pdf"></i> View PDF
+                    </a>
+                    <a href="writings/CTI_371M___Term_Paper.pdf" download>
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+
                 <div class="writing-card">
-                  <h3>Displaying Fear, Sadness, and Joy in Public: Schizophrenia Vloggers' Video Narration of Emotion and Online Care-Seeking
+                  <h3>Displaying Fear, Sadness, and Joy in Public: Schizophrenia Vloggers' Video Narration of Emotion and Online Care-Seeking (Feb 2025)
                   </h3>
                   <p>Computers and Society. Social and Information Networks.</p>
-                  <a href="2502.20658v1.pdf" download>
+                  <a href="writings/2502.20658v1.pdf" download>
                       <i class="fas fa-download"></i> Download PDF
                   </a>
               </div>
+
+
                 <div class="writing-card">
-                    <h3>Cryptography Throughout History</h3>
-                    <p>Academic research paper exploring the history of cryptography.</p>
-                    <div class="project-links">
-                        <a href="writings/CTI_371M___Term_Paper.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View PDF
-                        </a>
-                        <a href="writings/CTI_371M___Term_Paper.pdf" download>
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                    </div>
+                  <h3>Scrutinizing the Use of Repressed Memories as
+                    Testimony (Jan 2025)</h3>
+                  <p>An analysis of the use of repressed memories as testimony in court.</p>
+                  <div class="project-links">
+                      <a href="writings/ScrutinizingtheUseofRepressedMemoriesasTestimony.pdf" target="_blank">
+                          <i class="fas fa-file-pdf"></i> View PDF
+                      </a>
+                      <a href="writings/ScrutinizingtheUseofRepressedMemoriesasTestimony.pdf" download>
+                          <i class="fas fa-download"></i> Download
+                      </a>
+                  </div>
+              </div>
+
+              <div class="writing-card">
+                <h3>The Necessity for Tangible Research in the
+                  Judicial System (Dec 2024)</h3>
+                <p>A look at the necessity for tangible psychological research in the judicial system.</p>
+                <div class="project-links">
+                    <a href="writings/TheNecessityforTangibleResearchintheJudicialSystem.pdf" target="_blank">
+                        <i class="fas fa-file-pdf"></i> View PDF
+                    </a>
+                    <a href="writings/TheNecessityforTangibleResearchintheJudicialSystem.pdf" download>
+                        <i class="fas fa-download"></i> Download
+                    </a>
                 </div>
-                <div class="writing-card">
-                    <h3>A Solution to the Shortcomings of American
-                      Geometry Education</h3>
-                    <p>A scathing critique of American geometry education.</p>
-                    <div class="project-links">
-                        <a href="writings/M333L___Term_Paper.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View PDF
-                        </a>
-                        <a href="writings/M333L___Term_Paper.pdf" download>
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                    </div>
-                </div>
+            </div>
+
+            <div class="writing-card">
+              <h3>A Solution to the Shortcomings of American
+                Geometry Education (Apr 2024)</h3>
+              <p>A scathing critique of American geometry education.</p>
+              <div class="project-links">
+                  <a href="writings/M333L___Term_Paper.pdf" target="_blank">
+                      <i class="fas fa-file-pdf"></i> View PDF
+                  </a>
+                  <a href="writings/M333L___Term_Paper.pdf" download>
+                      <i class="fas fa-download"></i> Download
+                  </a>
+              </div>
+          </div>
             </div>
         </div>
     </section>

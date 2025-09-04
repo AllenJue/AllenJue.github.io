@@ -313,12 +313,9 @@
             margin-bottom: 1rem;
         }
 
-        .writing-card .writing-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .writing-card p {
+            color: #6b5b47;
+            margin-bottom: 2rem;
         }
 
         .writing-card a {
@@ -326,15 +323,18 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.8rem 1.5rem;
-            background: linear-gradient(135deg, #8b7355, #a08a6f);
-            color: white;
+            background: rgba(139, 115, 85, 0.1);
+            color: #8b7355;
             text-decoration: none;
             border-radius: 25px;
             transition: all 0.3s ease;
             font-size: 0.9rem;
+            border: 1px solid rgba(139, 115, 85, 0.2);
         }
 
         .writing-card a:hover {
+            background: #8b7355;
+            color: white;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
         }
@@ -384,6 +384,86 @@
             .container {
                 padding: 0 15px;
             }
+        }
+
+        /* Code Modal */
+        .code-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .code-modal-content {
+            background: #f5f5dc;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 196, 168, 0.5);
+        }
+
+        .code-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(212, 196, 168, 0.3);
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px 15px 0 0;
+        }
+
+        .code-modal-header h3 {
+            color: #6b5b47;
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .close-code-modal {
+            color: #8b7355;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-code-modal:hover {
+            color: #6b5b47;
+        }
+
+        .code-modal-body {
+            padding: 2rem;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .code-modal-body pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 0;
+            border: 1px solid #444;
+        }
+
+        .code-modal-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid rgba(212, 196, 168, 0.3);
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 15px 15px;
+            text-align: center;
         }
 
         /* Smooth scrolling */
@@ -449,7 +529,6 @@
                         <li style="margin-bottom: 0.8rem;">🔄 CS389R: Recursion and Induction</li>
                         <li style="margin-bottom: 0.8rem;">👥 CS395T: Human-Computer Interaction</li>
                         <li style="margin-bottom: 0.8rem;">♟️ Chess Enthusiast (99.7% Chess.com)</li>
-                        <li style="margin-bottom: 0.8rem;">📚 Always Learning</li>
                     </ul>
                 </div>
                 
@@ -470,7 +549,7 @@
                     <p>Final project presentation and report on secure systems theory and practice. Explored advanced security concepts and implementations.</p>
                                         <div class="project-links">
                         <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Report
+                            <i class="fas fa-file-pdf"></i> View PDF
                         </a>
                         <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf" download>
                             <i class="fas fa-download"></i> Download
@@ -485,7 +564,7 @@
                     <h3>CS389R - Recursion & Induction</h3>
                     <p>Final project presentation and implementation in Common Lisp. Explored recursive algorithms and mathematical induction concepts.</p>
                                         <div class="project-links">
-                        <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp" target="_blank">
+                        <a href="#" class="view-code-btn" data-file="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp">
                             <i class="fas fa-code"></i> View Code
                         </a>
                         <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp" download>
@@ -495,7 +574,7 @@
                             <i class="fas fa-file-powerpoint"></i> View Presentation
                         </a>
                         <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/CS389R___Final_Project_Presentation.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Report
+                            <i class="fas fa-file-pdf"></i> View PDF
                         </a>
                     </div>
                 </div>
@@ -505,7 +584,7 @@
                     <p>Final project presentation and report on HCI principles and design. Focused on user experience and interface design.</p>
                     <div class="project-links">
                         <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Report
+                            <i class="fas fa-file-pdf"></i> View PDF
                         </a>
                         <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" download>
                             <i class="fas fa-download"></i> Download
@@ -564,7 +643,7 @@
                 <div class="writing-card">
                     <h3>Cryptography Throughout History</h3>
                     <p>Academic research paper exploring the history of cryptography.</p>
-                    <div class="writing-actions">
+                    <div class="project-links">
                         <a href="writings/CTI_371M___Term_Paper.pdf" target="_blank">
                             <i class="fas fa-file-pdf"></i> View PDF
                         </a>
@@ -577,7 +656,7 @@
                     <h3>A Solution to the Shortcomings of American
                       Geometry Education</h3>
                     <p>A scathing critique of American geometry education.</p>
-                    <div class="writing-actions">
+                    <div class="project-links">
                         <a href="writings/M333L___Term_Paper.pdf" target="_blank">
                             <i class="fas fa-file-pdf"></i> View PDF
                         </a>
@@ -589,6 +668,24 @@
             </div>
         </div>
     </section>
+
+    <!-- Code Viewer Modal -->
+    <div id="codeModal" class="code-modal">
+        <div class="code-modal-content">
+            <div class="code-modal-header">
+                <h3 id="codeModalTitle">Code Viewer</h3>
+                <span class="close-code-modal">&times;</span>
+            </div>
+            <div class="code-modal-body">
+                <pre id="codeContent"><code></code></pre>
+            </div>
+            <div class="code-modal-footer">
+                <a href="#" id="downloadCodeLink" class="resume-action-btn">
+                    <i class="fas fa-download"></i> Download Code
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -665,6 +762,65 @@
                         alert(`Error accessing file: ${filename}\n\nPlease ensure the file exists and is properly committed to the repository.`);
                     });
             });
+        });
+
+        // Code modal functionality
+        const codeModal = document.getElementById('codeModal');
+        const closeCodeModal = document.querySelector('.close-code-modal');
+        const codeContent = document.getElementById('codeContent');
+        const codeModalTitle = document.getElementById('codeModalTitle');
+        const downloadCodeLink = document.getElementById('downloadCodeLink');
+
+        // Open code modal
+        document.querySelectorAll('.view-code-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const filePath = this.getAttribute('data-file');
+                const fileName = filePath.split('/').pop();
+                
+                // Set modal title
+                codeModalTitle.textContent = `Viewing: ${fileName}`;
+                
+                // Set download link
+                downloadCodeLink.href = filePath;
+                downloadCodeLink.download = fileName;
+                
+                // Fetch and display code content
+                fetch(filePath)
+                    .then(response => response.text())
+                    .then(data => {
+                        codeContent.textContent = data;
+                        codeModal.style.display = 'block';
+                        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                    })
+                    .catch(error => {
+                        codeContent.textContent = `Error loading file: ${error.message}`;
+                        codeModal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    });
+            });
+        });
+
+        // Close code modal
+        closeCodeModal.addEventListener('click', function() {
+            codeModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === codeModal) {
+                codeModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && codeModal.style.display === 'block') {
+                codeModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         });
     </script>
 </body>

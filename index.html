@@ -1,52 +1,665 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allen Jue - Computer Science & Mathematics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<html>
-  
-  <style>
-      /* Add your CSS styles here */
-      body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-      }
-      /* Additional styles can be added as needed */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #4a4a4a;
+            background: linear-gradient(135deg, #f5f5dc 0%, #f0f0e0 50%, #e8e8d0 100%);
+            min-height: 100vh;
+        }
 
-    .header img {
-      max-width: 100%;
-      max-height: 200px; /* Adjust the max-height as needed */
-      display: block;
-      margin: 0 auto;
-    }
-  </style>
-  
-  <header>
-    <h2 style="text-align:center">Allen Jue's Home Page</h2>
-  </header>
-  <body>
-    <div class="header">
-      <img src="Selfie.jpeg" alt="Personal Image">
-    </div>
-    <div style="margin: 5%;">
-      <p>
-        Welcome! My name is Allen Jue, and I am a currently an graduate student at UT Austin studying Computer Science and Mathematics in the integrated masters program. I have an interest in computer systems and theory. If you want to see some more of my projects <a href="https://github.com/AllenJue">go here</a>. In my spare time, I like to play chess, and I'm willing to take on any challengers! I'm eager to learn just about anything, and if you have any exciting opportunities, please reach out to me.
-      </p>
-      <p>
-        Email: mrallenjue@cs.utexas.edu
-        <br>
-        <a href="https://github.com/AllenJue">GitHub</a>
-        <br>
-        <a href="https://www.linkedin.com/in/allen-jue-0901a81a9/">LinkedIn</a>
-        <br>
-        <a href="https://lichess.org/@/JueAllen">Lichess Account</a>
-        <br>
-        <a href="https://www.chess.com/member/jueallen">Chess.com account</a>
-      </p>
-      <p>
-        For my full CV, please email me!
-      </p>
-    </div>
-    <div>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    </div>
-  </body>
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(245, 245, 220, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #8b7355;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #6b5b47;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #8b7355;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #8b7355;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 2rem;
+            border: 4px solid #d4c4a8;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #6b5b47;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: #8b7355;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #6b5b47;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(139, 115, 85, 0.1);
+            color: #8b7355;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-links a:hover {
+            background: #8b7355;
+            color: #f5f5dc;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: #6b5b47;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 300;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #d4c4a8, #8b7355);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: #6b5b47;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            background: rgba(139, 115, 85, 0.1);
+            color: #8b5a2b;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(139, 115, 85, 0.2);
+        }
+
+        /* Resume Section */
+        .resume-content {
+            text-align: center;
+        }
+
+        .resume-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b7355, #a08a6f);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
+        }
+
+        .resume-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 115, 85, 0.4);
+        }
+
+        /* Classes/Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 196, 168, 0.3);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .project-card h3 {
+            color: #6b5b47;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .project-card p {
+            color: #6b5b47;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(139, 115, 85, 0.1);
+            color: #8b7355;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(139, 115, 85, 0.2);
+        }
+
+        .project-links a:hover {
+            background: #8b7355;
+            color: white;
+        }
+
+        /* Writings Section */
+        .writings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .writing-card {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 196, 168, 0.3);
+            text-align: center;
+        }
+
+        .writing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .writing-card h3 {
+            color: #6b5b47;
+            margin-bottom: 1rem;
+        }
+
+        .writing-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #8b7355, #a08a6f);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .writing-card a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(139, 115, 85, 0.1);
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(212, 196, 168, 0.3);
+        }
+
+        .footer p {
+            color: #6b5b47;
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .projects-grid,
+            .writings-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Allen Jue</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#writings">Writings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="webcam-toy-photo1.jpg" alt="Allen Jue" class="hero-image">
+            <h1>Allen Jue</h1>
+            <h2>MS in Computer Science</h2>
+            <h2>BS Computer Science & Mathematics with a Minor in Business</h2>
+            <p>Currently pursuing an integrated master's program at UT Austin with interests in computer systems, theory, and secure systems. Passionate about learning and always eager for new challenges.</p>
+            <div class="social-links">
+                <a href="https://github.com/AllenJue" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/allen-jue-0901a81a9/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:mrallenjue@cs.utexas.edu" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a graduate student at UT Austin studying Computer Science and Mathematics in the integrated master's program. My academic focus lies in computer systems, theory, and secure systems.</p>
+                    <p>I play speed chess. I'm proud to be in the 95th percentile on Lichess and 99.7th percentile on Chess.com in bullet chess.</p>
+                    <p>I'm passionate about learning and exploring new technologies. If you have exciting opportunities or just want to discuss interesting problems, feel free to reach out.</p>
+                    
+                    <div class="skills">
+                        <span class="skill-tag">Computer Systems</span>
+                        <span class="skill-tag">Theory</span>
+                        <span class="skill-tag">Secure Systems</span>
+                        <span class="skill-tag">Mathematics</span>
+                        <span class="skill-tag">WebAssembly</span>
+                        <span class="skill-tag">Common Lisp</span>
+                        <span class="skill-tag">Machine Learning</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3 style="color: #6b5b47; margin-bottom: 1rem;">Quick Facts</h3>
+                    <ul style="list-style: none; color: #6b5b47;">
+                        <li style="margin-bottom: 0.8rem;">🎓 UT Austin Integrated MS Program</li>
+                        <li style="margin-bottom: 0.8rem;">🔒 CS380S: Theory and Practice of Secure Systems</li>
+                        <li style="margin-bottom: 0.8rem;">🔄 CS389R: Recursion and Induction</li>
+                        <li style="margin-bottom: 0.8rem;">👥 CS395T: Human-Computer Interaction</li>
+                        <li style="margin-bottom: 0.8rem;">♟️ Chess Enthusiast (99.7% Chess.com)</li>
+                        <li style="margin-bottom: 0.8rem;">📚 Always Learning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section">
+        <div class="container">
+            <h2>Resume</h2>
+            <div class="resume-content">
+                <p style="font-size: 1.2rem; color: #6b5b47; margin-bottom: 2rem;">Download my full resume to learn more about my experience and qualifications.</p>
+                <a href="Master_resume.pdf" class="resume-btn" download>
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Classes & Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>CS380S - Secure Systems</h3>
+                    <p>Final project presentation and report on secure systems theory and practice. Explored advanced security concepts and implementations.</p>
+                    <div class="project-links">
+                      <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf" download>
+                        <i class="fas fa-file-pdf"></i> Report
+                    </a>
+                        <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S%20-%20Final%20Project%20Presentation.pptx" download>
+                            <i class="fas fa-file-powerpoint"></i> Presentation
+                        </a>
+                      
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>CS389R - Recursion & Induction</h3>
+                    <p>Final project presentation and implementation in Common Lisp. Explored recursive algorithms and mathematical induction concepts.</p>
+                    <div class="project-links">
+                      <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp" download>
+                        <i class="fas fa-code"></i> Lisp Code
+                      </a>
+                        <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/CS389r%20-%20Final%20Presentations.pptx" download>
+                            <i class="fas fa-file-powerpoint"></i> Presentation
+                        </a>
+                      
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>CS395T - Human-Computer Interaction</h3>
+                    <p>Final project presentation and report on HCI principles and design. Focused on user experience and interface design.</p>
+                    <div class="project-links">
+                        <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" download>
+                            <i class="fas fa-file-pdf"></i> Report
+                        </a>
+                        <a href="Classes/CS395T%20-%20HCI/HCI%20-%20Final%20Presentation.pptx" download>
+                            <i class="fas fa-file-powerpoint"></i> Presentation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>EDP382C - Educational Psychology</h3>
+                    <p>Macnamara presentation on educational psychology concepts and research findings.</p>
+                    <div class="project-links">
+                        <a href="Classes/EDP382C%20-%20Educational%20Psychology/EDP%20382C%20-%20Macnamara.pptx" download>
+                            <i class="fas fa-file-powerpoint"></i> Presentation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>GitHub Projects</h3>
+                    <p>Check out my open-source contributions and personal projects on GitHub, including WebAssembly tools and cryptographic implementations.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/AllenJue/wasm2c-memorytrace" target="_blank">
+                            <i class="fab fa-github"></i> wasm2c-memorytrace
+                        </a>
+                        <a href="https://github.com/AllenJue/CryptACL2" target="_blank">
+                            <i class="fab fa-github"></i> CryptACL2
+                        </a>
+                        <a href="https://github.com/AllenJue/TEA-ACL2" target="_blank">
+                            <i class="fab fa-github"></i> TEA-ACL2
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Writings Section -->
+    <section id="writings" class="section">
+        <div class="container">
+            <h2>Academic Writings</h2>
+            <div class="writings-grid">
+                <div class="writing-card">
+                  <h3>Displaying Fear, Sadness, and Joy in Public: Schizophrenia Vloggers' Video Narration of Emotion and Online Care-Seeking
+                  </h3>
+                  <p>Computers and Society. Social and Information Networks.</p>
+                  <a href="2502.20658v1.pdf" download>
+                      <i class="fas fa-download"></i> Download PDF
+                  </a>
+              </div>
+                <div class="writing-card">
+                    <h3>CTI 371M Term Paper</h3>
+                    <p>Academic research paper exploring advanced topics in computer and information technology.</p>
+                    <a href="writings/CTI_371M___Term_Paper.pdf" download>
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+                <div class="writing-card">
+                    <h3>M333L Term Paper</h3>
+                    <p>Mathematics research paper covering theoretical concepts and mathematical analysis.</p>
+                    <a href="writings/M333L___Term_Paper.pdf" download>
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Allen Jue. All rights reserved.</p>
+            <p>Feel free to reach out for collaborations, chess games, or just to chat!</p>
+            <div class="social-links" style="margin-top: 1.5rem;">
+                <a href="https://lichess.org/@/jueallen" title="Lichess (95th percentile)"><i class="fas fa-chess-king"></i></a>
+                <a href="https://www.chess.com/member/jueallen" title="Chess.com (99.7th percentile)"><i class="fas fa-chess-board"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(245, 245, 220, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(245, 245, 220, 0.95)';
+            }
+        });
+
+        // Enhanced file download handling for GitHub Pages
+        document.querySelectorAll('a[download]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                const filename = href.split('/').pop();
+                
+                // Check if file exists before attempting download
+                fetch(href, { method: 'HEAD' })
+                    .then(response => {
+                        if (!response.ok) {
+                            e.preventDefault();
+                            alert(`File not found: ${filename}\n\nThis might be because:\n• The file path contains spaces\n• The file hasn't been uploaded to GitHub yet\n• There's a case sensitivity issue\n\nPlease check the file path and ensure all files are committed to the repository.`);
+                        }
+                    })
+                    .catch(error => {
+                        e.preventDefault();
+                        alert(`Error accessing file: ${filename}\n\nPlease ensure the file exists and is properly committed to the repository.`);
+                    });
+            });
+        });
+    </script>
+</body>
 </html>

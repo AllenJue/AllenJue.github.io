@@ -15,21 +15,19 @@
             min-height: 100vh;
         }
         a { color: inherit; }
-        .container { max-width: 860px; margin: 0 auto; padding: 0 16px; }
-
         .layout {
             display: grid;
-            grid-template-columns: 240px 1fr 220px;
-            gap: 24px;
-            max-width: 1320px;
+            grid-template-columns: 220px 1fr;
+            gap: 16px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 24px 16px;
+            padding: 14px 14px 24px;
         }
-        .sidebar-left, .sidebar-right {
+        .sidebar-left {
             position: sticky;
-            top: 24px;
+            top: 14px;
             align-self: start;
-            height: calc(100vh - 48px);
+            height: calc(100vh - 28px);
             overflow: auto;
             padding: 12px;
             border: 1px solid #e6e6e6;
@@ -58,89 +56,50 @@
             font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
             font-size: 0.95rem;
             color: #111;
-            display: block;
-            padding: 6px 8px;
-            border-radius: 6px;
+            display: inline-block;
+            padding: 2px 0;
         }
-        .sidebar-nav a:hover, .sidebar-nav a:focus { background: #f2f2f2; outline: none; }
+        .sidebar-nav a:hover, .sidebar-nav a:focus {
+            text-decoration: underline;
+            background: none;
+            outline: none;
+        }
         .rule { height: 1px; background: #111; opacity: 0.18; margin: 14px 0; }
         .main { min-width: 0; }
 
-        .hero { padding: 18px 0 12px; }
-        .hero h1 { font-size: 2.0rem; font-weight: 700; letter-spacing: -0.02em; }
+        .hero { padding: 8px 0 6px; }
+        .hero h1 { font-size: 1.9rem; font-weight: 700; letter-spacing: -0.02em; }
         .dek {
             font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-            font-size: 0.98rem;
+            font-size: 0.96rem;
             color: #222;
-            margin-top: 6px;
+            margin-top: 4px;
         }
 
-        .section { padding: 18px 0; }
-        .section h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
+        .section { padding: 10px 0; }
+        .section h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em; margin-top: 24px; }
+        .section h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; margin-top: 18px; color: #333; }
 
-        /* Timeline */
-        .horizontal-timeline {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            position: relative;
-            margin: 12px 0;
-            padding: 0 10px;
-            gap: 10px;
+        .reading-list {
+            margin: 0 0 8px 18px;
+            padding: 0;
         }
-        .horizontal-timeline::before {
-            content: '';
-            position: absolute;
-            top: 30px;
-            left: 10px;
-            right: 10px;
-            height: 2px;
-            background: #111;
-            z-index: 1;
-            opacity: 0.18;
+        .reading-list li {
+            margin-bottom: 6px;
+            line-height: 1.5;
         }
-        .timeline-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            flex: 1;
-            max-width: 170px;
+        .reading-title {
+            font-weight: 600;
         }
-        .timeline-circle {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: #111;
-            border: 3px solid #fff;
-            margin-bottom: 10px;
+        .reading-note {
+            color: #666;
+            font-style: italic;
+            font-size: 0.9em;
         }
-        .timeline-content h3 { font-size: 0.95rem; margin-bottom: 6px; line-height: 1.2; }
-        .timeline-content .author { font-size: 0.82rem; color: #333; margin-bottom: 8px; font-style: italic; }
-        .paper-link {
-            display: inline-block;
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-            font-size: 0.8rem;
-            color: #111;
-            text-decoration: none;
-            padding: 0.28rem 0.6rem;
-            background: #fff;
-            border-radius: 999px;
-            border: 1px solid #e6e6e6;
-            transition: background 0.12s ease, border-color 0.12s ease;
-        }
-        .paper-link:hover { background: #f2f2f2; border-color: #bdbdbd; }
 
         @media (max-width: 900px) {
-            .layout { grid-template-columns: 1fr; gap: 14px; padding: 14px 12px; }
-            .sidebar-left, .sidebar-right { position: static; height: auto; overflow: visible; }
-        }
-        @media (max-width: 768px) {
-            .horizontal-timeline { flex-direction: column; align-items: center; }
-            .horizontal-timeline::before { display: none; }
-            .timeline-item { max-width: 320px; }
+            .layout { grid-template-columns: 1fr; gap: 12px; padding: 12px 10px 20px; }
+            .sidebar-left { position: static; height: auto; overflow: visible; }
         }
     </style>
 </head>
@@ -153,7 +112,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Classes & Projects</a></li>
                 <li><a href="reading.html" aria-current="page">Reading</a></li>
-                <li><a href="index.html#writings">Writings</a></li>
+                <li><a href="writings.html">Writings</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <div class="rule"></div>
@@ -167,79 +126,87 @@
 
         <main class="main">
             <section class="hero">
-                <div class="container">
-                    <h1>Reading List</h1>
-                    <div class="dek">A short list of books and papers I’m reading / have read recently.</div>
-                </div>
+                <h1>Reading List</h1>
+                <div class="dek">Books/papers I’ve read or am reading.</div>
             </section>
 
             <section id="reading" class="section">
-                <div class="container">
-                    <h2>Timeline</h2>
-                    <div class="horizontal-timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-content">
-                                <h3>Teacher Man</h3>
-                                <p class="author">Frank McCourt</p>
-                            </div>
-                        </div>
+                <h3>2025</h3>
+                <ol class="reading-list">
+                    <li><span class="reading-title">The Charisma Machine</span> — Morgan G. Ames <span class="reading-note">(on hold)</span></li>
+                    <li><span class="reading-title">Beyond the Science of Reading</span> — Natalie Wexler <span class="reading-note">(on hold)</span></li>
+                    <li><span class="reading-title">Bird by Bird</span> — Anne Lamott</li>
+                    <li><span class="reading-title">Dracula</span> — Bram Stoker</li>
+                    <li><span class="reading-title">Making It Stick</span> — Peter C. Brown</li>
+                    <li><span class="reading-title">Language at the Speed of Sight</span> — Mark Seidenberg <span class="reading-note">(in progress)</span></li>
+                    <li><span class="reading-title">Wuthering Heights</span> — Emily Brontë <span class="reading-note">(on hold)</span></li>
+                    <li><span class="reading-title">Original Sins</span> — Eve L. Ewing</li>
+                    <li><span class="reading-title">Circe</span> — Madeline Miller</li>
+                    <li><span class="reading-title">A Little Book on Vodka</span> — Malcolm Croft</li>
+                </ol>
 
-                        <div class="timeline-item">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-content">
-                                <h3>Flowers for Algernon</h3>
-                                <p class="author">Daniel Keyes</p>
-                            </div>
-                        </div>
+                <h3>2024</h3>
+                <ol class="reading-list">
+                    <li><span class="reading-title">The Castle</span> — Franz Kafka</li>
+                    <li><span class="reading-title">No Longer Human</span> — Osamu Dazai</li>
+                    <li><span class="reading-title">A Personal Matter</span> — Kenzaburō Ōe</li>
+                    <li><span class="reading-title">The Old Man and the Sea</span> — Ernest Hemingway</li>
+                    <li><span class="reading-title">Tuesdays with Morrie</span> — Mitch Albom</li>
+                    <li><span class="reading-title">Dumbing Us Down</span> — John Taylor Gatto</li>
+                    <li><span class="reading-title">Math Without Numbers</span> — Milo Beckman</li>
+                    <li><span class="reading-title">The Committed</span> — Viet Thanh Nguyen</li>
+                    <li><span class="reading-title">Stein on Writing</span> — Sol Stein</li>
+                    <li><span class="reading-title">The Architecture of Happiness</span> — Alain de Botton</li>
+                    <li><span class="reading-title">On Love</span> — Alain de Botton</li>
+                    <li><span class="reading-title">Relationships</span> — Alain de Botton</li>
+                    <li><span class="reading-title">Candide</span> — Voltaire</li>
+                    <li><span class="reading-title">Black Skin, White Masks</span> — Frantz Fanon</li>
+                    <li><span class="reading-title">Escape from Evil</span> — Ernest Becker</li>
+                    <li><span class="reading-title">Group Psychology and the Analysis of the Ego</span> — Sigmund Freud</li>
+                    <li><span class="reading-title">The Woman Destroyed</span> — Simone de Beauvoir</li>
+                    <li><span class="reading-title">All Men Are Mortal</span> — Simone de Beauvoir</li>
+                    <li><span class="reading-title">How to Think More About Sex</span> — Alain de Botton</li>
+                    <li><span class="reading-title">A Week at the Airport</span> — Alain de Botton</li>
+                    <li><span class="reading-title">The Wisdom of Life</span> — Arthur Schopenhauer</li>
+                    <li><span class="reading-title">How to Find the Right Words</span> — Alain de Botton</li>
+                    <li><span class="reading-title">My Secret Garden</span> — Nancy Friday</li>
+                    <li><span class="reading-title">Modern Man in Search of a Soul</span> — Carl Jung</li>
+                    <li><span class="reading-title">Rosencrantz and Guildenstern Are Dead</span> — Tom Stoppard</li>
+                    <li><span class="reading-title">Straw Dogs</span> — John Gray</li>
+                    <li><span class="reading-title">The Cap</span> — Roman Frister</li>
+                    <li><span class="reading-title">The Man with a Shattered World</span> — A. R. Luria</li>
+                    <li><span class="reading-title">The Man Who Mistook His Wife for a Hat</span> — Oliver Sacks</li>
+                    <li><span class="reading-title">The Mind of a Mnemonist</span> — A. R. Luria</li>
+                    <li><span class="reading-title">The Setting Sun</span> — Osamu Dazai</li>
+                    <li><span class="reading-title">How to Be Perfect</span> — Michael Schur</li>
+                    <li><span class="reading-title">The Design of Everyday Things</span> — Don Norman</li>
+                    <li><span class="reading-title">Caste</span> — Isabel Wilkerson</li>
+                    <li><span class="reading-title">Feline Philosophy</span> — John Gray</li>
+                    <li><span class="reading-title">Who Will Run the Frog Hospital?</span> — Lorrie Moore</li>
+                    <li><span class="reading-title">On Women</span> — Susan Sontag</li>
+                    <li><span class="reading-title">Little Rot</span> — Akwaeke Emezi</li>
+                    <li><span class="reading-title">Klara and the Sun</span> — Kazuo Ishiguro</li>
+                    <li><span class="reading-title">Ghost in the Wires</span> — Kevin Mitnick</li>
+                    <li><span class="reading-title">Angela's Ashes</span> — Frank McCourt</li>
+                    <li><span class="reading-title">The Swimmer</span> — John Cheever</li>
+                    <li><span class="reading-title">Man's Search for Meaning</span> — Viktor E. Frankl</li>
+                </ol>
 
-                        <div class="timeline-item">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-content">
-                                <h3>The Phantom Tollbooth</h3>
-                                <p class="author">Norton Juster</p>
-                            </div>
-                        </div>
+                <h3>2023</h3>
+                <ol class="reading-list">
+                    <li><span class="reading-title">Hello World</span> — Hannah Fry</li>
+                    <li><span class="reading-title">The Weirdest People in the World</span> — Joseph Henrich</li>
+                    <li><span class="reading-title">The Stranger</span> — Albert Camus</li>
+                </ol>
 
-                        <div class="timeline-item">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-content">
-                                <h3>Re: CAPTCHAs</h3>
-                                <p class="author">Marti Motoyama et al.</p>
-                                <a href="https://www.usenix.org/legacy/event/sec10/tech/full_papers/Motoyama.pdf" target="_blank" rel="noopener noreferrer" class="paper-link">PDF</a>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-content">
-                                <h3>VOYAGER</h3>
-                                <p class="author">Wang et al.</p>
-                                <a href="https://arxiv.org/pdf/2305.16291" target="_blank" rel="noopener noreferrer" class="paper-link">PDF</a>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-circle"></div>
-                            <div class="timeline-content">
-                                <h3>As We May Think</h3>
-                                <p class="author">Vannevar Bush</p>
-                                <a href="https://dl.acm.org/doi/abs/10.1145/227181.227186" target="_blank" rel="noopener noreferrer" class="paper-link">PDF</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h3>2022</h3>
+                <ol class="reading-list">
+                    <li><span class="reading-title">The Mythical Man-Month</span> — Frederick P. Brooks Jr.</li>
+                    <li><span class="reading-title">The Master Algorithm</span> — Pedro Domingos</li>
+                </ol>
             </section>
         </main>
 
-        <aside class="sidebar-right" aria-label="Reading links">
-            <div class="sidebar-title">Reading</div>
-            <div class="sidebar-subtitle">Jump</div>
-            <ul class="sidebar-nav">
-                <li><a href="#reading">Timeline</a></li>
-                <li><a href="index.html">Back to Home</a></li>
-            </ul>
-        </aside>
     </div>
 </body>
 </html>

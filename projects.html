@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes & Projects - Allen Jue</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 1.5;
+            color: #111;
+            background: #fff;
+            min-height: 100vh;
+        }
+        a { color: inherit; }
+        .container { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 240px 1fr 220px;
+            gap: 24px;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+        .sidebar-left, .sidebar-right {
+            position: sticky;
+            top: 24px;
+            align-self: start;
+            height: calc(100vh - 48px);
+            overflow: auto;
+            padding: 12px;
+            border: 1px solid #e6e6e6;
+            background: #fff;
+        }
+        .sidebar-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.02em;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .sidebar-subtitle {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            font-size: 0.82rem;
+            color: #333;
+            margin: 10px 0 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .sidebar-nav { list-style: none; margin: 0; padding: 0; }
+        .sidebar-nav li { margin: 6px 0; }
+        .sidebar-nav a {
+            text-decoration: none;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            font-size: 0.95rem;
+            color: #111;
+            display: block;
+            padding: 6px 8px;
+            border-radius: 6px;
+        }
+        .sidebar-nav a:hover, .sidebar-nav a:focus { background: #f2f2f2; outline: none; }
+        .rule { height: 1px; background: #111; opacity: 0.18; margin: 14px 0; }
+        .main { min-width: 0; }
+
+        .hero { padding: 18px 0 12px; }
+        .hero h1 { font-size: 2.0rem; font-weight: 700; letter-spacing: -0.02em; }
+        .dek {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            font-size: 0.98rem;
+            color: #222;
+            margin-top: 6px;
+        }
+
+        .section { padding: 18px 0; }
+        .section h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 14px;
+            box-shadow: none;
+            transition: border-color 0.12s ease;
+            border: 1px solid #e6e6e6;
+        }
+        .project-card:hover { border-color: #bdbdbd; }
+        .project-card h3 {
+            color: #111;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .project-card p {
+            color: #111;
+            margin-bottom: 10px;
+            line-height: 1.55;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            font-size: 0.95rem;
+        }
+        .project-links {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .project-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.7rem;
+            background: #fff;
+            color: #111;
+            text-decoration: none;
+            border-radius: 999px;
+            transition: background 0.12s ease, border-color 0.12s ease;
+            border: 1px solid #e6e6e6;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            font-size: 0.85rem;
+        }
+        .project-links a:hover { background: #f2f2f2; border-color: #bdbdbd; }
+
+        @media (max-width: 900px) {
+            .layout { grid-template-columns: 1fr; gap: 14px; padding: 14px 12px; }
+            .sidebar-left, .sidebar-right { position: static; height: auto; overflow: visible; }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar-left" aria-label="Site navigation">
+            <div class="sidebar-title">Allen Jue</div>
+            <div class="sidebar-subtitle">Navigate</div>
+            <ul class="sidebar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" aria-current="page">Classes & Projects</a></li>
+                <li><a href="reading.html">Reading</a></li>
+                <li><a href="index.html#writings">Writings</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="rule"></div>
+            <div class="sidebar-subtitle">Folders</div>
+            <ul class="sidebar-nav">
+                <li><a href="Classes/" target="_blank" rel="noopener noreferrer">Classes folder</a></li>
+            </ul>
+        </aside>
+
+        <main class="main">
+            <section class="hero">
+                <div class="container">
+                    <h1>Classes & Projects</h1>
+                    <div class="dek">Coursework and projects, with links to reports and presentations.</div>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <div class="container">
+                    <h2>Highlights</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>CS380S - Wasm2c Memory Trace Metrics</h3>
+                            <p>Discovered redundant memory checks in code transpiled by Wasm2c by implementing memory traces.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/AllenJue/wasm2c-memorytrace" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> wasm2c-memorytrace
+                                </a>
+                                <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf"></i> View PDF
+                                </a>
+                                <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf" download>
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                                <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S%20-%20Final%20Project%20Presentation.pptx" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-powerpoint"></i> View Presentation
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>CS389R - Proof of TEA Cipher.</h3>
+                            <p>Utilized ACL2 to prove the correctness of the TEA cipher algorithm.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/AllenJue/CryptACL2" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> CryptACL2
+                                </a>
+                                <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp" download>
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                                <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/CS389r%20-%20Final%20Presentations.pptx" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-powerpoint"></i> View Presentation
+                                </a>
+                                <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/CS389R___Final_Project_Presentation.pdf" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf"></i> View PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>CS395T - LLM-based Auto-Highlighting Reader</h3>
+                            <p>Designed a UI that uses LLMs to automatically highlight important parts of a text and tested users comprehension with the tool.</p>
+                            <div class="project-links">
+                                <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf"></i> View PDF
+                                </a>
+                                <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" download>
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                                <a href="Classes/CS395T%20-%20HCI/HCI%20-%20Final%20Presentation.pptx" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-powerpoint"></i> View Presentation
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>EDP382C - Educational Psychology</h3>
+                            <p>Macnamara presentation on educational psychology concepts and research findings.</p>
+                            <div class="project-links">
+                                <a href="Classes/EDP382C%20-%20Educational%20Psychology/EDP%20382C%20-%20Macnamara.pptx" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-powerpoint"></i> View Presentation
+                                </a>
+                                <a href="Classes/EDP382C%20-%20Educational%20Psychology/EDP%20382C%20-%20Macnamara.pptx" download>
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>CS378 - C/C++ Threadpool Implementation</h3>
+                            <p>Advanced concurrency concepts and thread pool implementation. Explored multi-threading, synchronization, and concurrent programming patterns.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/AllenJue/threadpool" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> Thread Pool Implementation
+                                </a>
+                                <a href="Classes/CS378%20-%20Concurrency/CS378___Final_Report.pdf" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf"></i> View PDF
+                                </a>
+                                <a href="Classes/CS378%20-%20Concurrency/CS378___Final_Report.pdf" download>
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar-right" aria-label="Projects links">
+            <div class="sidebar-title">Projects</div>
+            <div class="sidebar-subtitle">Jump</div>
+            <ul class="sidebar-nav">
+                <li><a href="#projects">Highlights</a></li>
+                <li><a href="index.html">Back to Home</a></li>
+            </ul>
+        </aside>
+    </div>
+</body>
+</html>

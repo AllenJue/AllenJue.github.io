@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Allen Jue - Computer Science & Mathematics</title>
+  <title>Allen Jue</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     * {
@@ -277,6 +277,24 @@
       font-size: 0.85rem;
       border: 1px solid #e6e6e6;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .page-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 16px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .page-links a {
+      color: #111;
+      text-decoration: none;
+    }
+
+    .page-links a:hover {
+      text-decoration: underline;
     }
 
 
@@ -661,9 +679,9 @@
         <div class="container">
           <img src="webcam-toy-photo1.jpg" alt="Allen Jue" class="hero-image">
           <h1>Allen Jue</h1>
-          <div class="dek">MS in Computer Science · BS Computer Science & Mathematics · Minor in Business</div>
-          <p>Currently pursuing an integrated master's program at UT Austin with interests in computer systems, theory,
-            and secure systems. Passionate about learning and always eager for new challenges.</p>
+          <div class="dek">Software Engineer at Google · MS Computer Science, UT Austin · BS CS & Mathematics</div>
+          <p>I build systems at Google and finished my integrated master's at UT Austin. I like computer systems, theory,
+            secure systems, and a good bullet chess game.</p>
           <div class="social-links">
             <a href="https://github.com/AllenJue" title="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/allen-jue-0901a81a9/" title="LinkedIn"><i
@@ -679,12 +697,10 @@
           <h2>About Me</h2>
           <div class="about-content">
             <div class="about-text">
-              <p>I'm a graduate student at UT Austin studying Computer Science and Mathematics in the integrated
-                master's program. My academic focus lies in computer systems, theory, and secure systems.</p>
-              <p>I play speed chess. I'm proud to be in the 95th percentile on Lichess and 99.7th percentile on
-                Chess.com in bullet chess.</p>
-              <p>I'm passionate about learning and exploring new technologies. If you have exciting opportunities or
-                just want to discuss interesting problems, feel free to reach out.</p>
+              <p>Started at Google as a SWE on June 8, 2026. Before that, I spent five years at UT Austin earning a BS in
+                Computer Science & Mathematics (business minor) and an MS in Computer Science.</p>
+              <p>Speed chess is my guilty pleasure — 95th percentile on Lichess, 99.7th on Chess.com in bullet.</p>
+              <p>Always happy to talk systems, security, theory, or chess. Reach out anytime.</p>
             </div>
           </div>
           <div class="skills">
@@ -696,41 +712,11 @@
             <span class="skill-tag">Common Lisp</span>
             <span class="skill-tag">Machine Learning</span>
           </div>
-        </div>
-      </section>
-
-      <!-- Reading + Projects moved to separate pages -->
-      <section class="section">
-        <div class="container">
-          <h2>Reading</h2>
-          <p
-            style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 0.95rem; color: #111; margin-bottom: 10px;">
-            Reading list is on its own page.
-          </p>
-          <p><a href="reading.html">Open Reading List</a></p>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <h2>Classes & Projects</h2>
-          <p
-            style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 0.95rem; color: #111; margin-bottom: 10px;">
-            Coursework and project writeups live on a separate page.
-          </p>
-          <p><a href="projects.html">Open Classes & Projects</a></p>
-        </div>
-      </section>
-
-      <!-- Writings moved to separate page -->
-      <section class="section">
-        <div class="container">
-          <h2>Personal Writings</h2>
-          <p
-            style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 0.95rem; color: #111; margin-bottom: 10px;">
-            Writing samples are on a separate page.
-          </p>
-          <p><a href="writings.html">Open Personal Writings</a></p>
+          <nav class="page-links" aria-label="More pages">
+            <a href="reading.html">Reading</a>
+            <a href="projects.html">Classes & Projects</a>
+            <a href="writings.html">Writings</a>
+          </nav>
         </div>
       </section>
 
@@ -755,7 +741,7 @@
       <!-- Footer -->
       <footer id="contact" class="footer">
         <div class="container">
-          <p>© 2025 Allen Jue. All rights reserved.</p>
+          <p>© 2026 Allen Jue. All rights reserved.</p>
           <p>Feel free to reach out for collaborations, chess games, or just to chat!</p>
           <div class="social-links" style="margin-top: 12px;">
             <a href="https://lichess.org/@/jueallen" title="Lichess (95th percentile)"><i

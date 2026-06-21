@@ -134,6 +134,14 @@
       letter-spacing: -0.01em;
     }
 
+    .section h2 + .section-note,
+    .section-note {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.92rem;
+      color: #444;
+      margin: -4px 0 12px;
+    }
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -145,9 +153,8 @@
       background: #fff;
       border-radius: 10px;
       padding: 14px;
-      box-shadow: none;
-      transition: border-color 0.12s ease;
       border: 1px solid #e6e6e6;
+      transition: border-color 0.12s ease;
     }
 
     .project-card:hover {
@@ -172,22 +179,27 @@
 
     .project-links {
       display: flex;
-      gap: 0.8rem;
+      gap: 0.5rem;
       flex-wrap: wrap;
     }
 
     .project-links a {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
+      padding: 0.3rem 0.65rem;
       color: #111;
       text-decoration: none;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      border: 1px solid #e6e6e6;
+      border-radius: 999px;
+      transition: background 0.12s ease, border-color 0.12s ease;
     }
 
     .project-links a:hover {
-      text-decoration: underline;
+      background: #f2f2f2;
+      border-color: #bdbdbd;
     }
 
     @media (max-width: 900px) {
@@ -219,9 +231,12 @@
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
       <div class="rule"></div>
-      <div class="sidebar-subtitle">Folders</div>
+      <div class="sidebar-subtitle">Quick links</div>
       <ul class="sidebar-nav">
-        <li><a href="Classes/" target="_blank" rel="noopener noreferrer">Classes folder</a></li>
+        <li><a href="https://github.com/AllenJue" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/allen-jue-0901a81a9/" target="_blank"
+            rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="mailto:mrallenjue@cs.utexas.edu">Email</a></li>
       </ul>
     </aside>
 
@@ -229,103 +244,161 @@
       <section class="hero">
         <div class="container">
           <h1>Classes & Projects</h1>
-          <div class="dek">Coursework and projects, with links to reports and presentations.</div>
+          <div class="dek">Graduate coursework at UT Austin — reports, slides, and code.</div>
         </div>
       </section>
 
       <section id="projects" class="section">
         <div class="container">
-          <h2>Highlights</h2>
+          <h2>Graduate</h2>
           <div class="projects-grid">
             <div class="project-card">
-              <h3>CS380S - Wasm2c Memory Trace Metrics</h3>
-              <p>Discovered redundant memory checks in code transpiled by Wasm2c by implementing memory traces.</p>
+              <h3>CS391R — Evolving Robot</h3>
+              <p>Evolutionary robotics final project: evolved controllers for simulated locomotion.</p>
               <div class="project-links">
-                <a href="https://github.com/AllenJue/wasm2c-memorytrace" target="_blank" rel="noopener noreferrer">
-                  <i class="fab fa-github"></i> wasm2c-memorytrace
+                <a href="https://github.com/AllenJue/CS391R-Evolving-Robot" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i> Code
                 </a>
-                <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf"
-                  target="_blank" rel="noopener noreferrer">
-                  <i class="fas fa-file-pdf"></i> View PDF
+                <a href="Classes/CS391R%20-%20Robotics/final-report.pdf" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-file-pdf"></i> Report
                 </a>
-                <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf"
-                  download>
-                  <i class="fas fa-download"></i> Download
-                </a>
-                <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S%20-%20Final%20Project%20Presentation.pptx"
-                  target="_blank" rel="noopener noreferrer">
-                  <i class="fas fa-file-powerpoint"></i> View Presentation
+                <a href="Classes/CS391R%20-%20Robotics/final-spotlight.pdf" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-file-pdf"></i> Spotlight
                 </a>
               </div>
             </div>
 
             <div class="project-card">
-              <h3>CS389R - Proof of TEA Cipher.</h3>
-              <p>Utilized ACL2 to prove the correctness of the TEA cipher algorithm.</p>
+              <h3>CS395T — Poisoning Learned Indexes</h3>
+              <p>Security analysis of adversarial poisoning attacks on learned index structures.</p>
+              <div class="project-links">
+                <a href="https://github.com/AllenJue/CS395T-Poisoning-Learned-Indexes" target="_blank"
+                  rel="noopener noreferrer">
+                  <i class="fab fa-github"></i> Code
+                </a>
+                <a href="Classes/CS395T%20-%20Poisoning%20Learned%20Indexes/poisoning-learned-indexes.pdf"
+                  target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-file-pdf"></i> Slides
+                </a>
+                <a href="Classes/CS395T%20-%20Poisoning%20Learned%20Indexes/final-slides.pdf" target="_blank"
+                  rel="noopener noreferrer">
+                  <i class="fas fa-file-pdf"></i> Final
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>CS395T — LLM Auto-Highlighting Reader</h3>
+              <p>HCI study: LLM-based topic highlighting and grouping to speed up document review.</p>
+              <div class="project-links">
+                <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-file-pdf"></i> Report
+                </a>
+                <a href="Classes/CS395T%20-%20HCI/auto-highlighting-slides.pdf" target="_blank"
+                  rel="noopener noreferrer">
+                  <i class="fas fa-file-pdf"></i> Slides
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>CS380S — Wasm2c Memory Traces</h3>
+              <p>Found redundant memory checks in Wasm2c-transpiled code via memory trace analysis.</p>
+              <div class="project-links">
+                <a href="https://github.com/AllenJue/wasm2c-memorytrace" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i> Code
+                </a>
+                <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf"
+                  target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-file-pdf"></i> Report
+                </a>
+                <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/final-presentation.pdf"
+                  target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-file-pdf"></i> Slides
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>CS389R — TEA Cipher Proof</h3>
+              <p>ACL2 formal verification of the Tiny Encryption Algorithm.</p>
               <div class="project-links">
                 <a href="https://github.com/AllenJue/CryptACL2" target="_blank" rel="noopener noreferrer">
-                  <i class="fab fa-github"></i> CryptACL2
-                </a>
-                <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp" download>
-                  <i class="fas fa-download"></i> Download
-                </a>
-                <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/CS389r%20-%20Final%20Presentations.pptx"
-                  target="_blank" rel="noopener noreferrer">
-                  <i class="fas fa-file-powerpoint"></i> View Presentation
+                  <i class="fab fa-github"></i> Code
                 </a>
                 <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/CS389R___Final_Project_Presentation.pdf"
                   target="_blank" rel="noopener noreferrer">
-                  <i class="fas fa-file-pdf"></i> View PDF
+                  <i class="fas fa-file-pdf"></i> Report
                 </a>
-              </div>
-            </div>
-
-            <div class="project-card">
-              <h3>CS395T - LLM-based Auto-Highlighting Reader</h3>
-              <p>Designed a UI that uses LLMs to automatically highlight important parts of a text and tested users
-                comprehension with the tool.</p>
-              <div class="project-links">
-                <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" target="_blank" rel="noopener noreferrer">
-                  <i class="fas fa-file-pdf"></i> View PDF
-                </a>
-                <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" download>
-                  <i class="fas fa-download"></i> Download
-                </a>
-                <a href="Classes/CS395T%20-%20HCI/HCI%20-%20Final%20Presentation.pptx" target="_blank"
+                <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/final-presentations.pdf" target="_blank"
                   rel="noopener noreferrer">
-                  <i class="fas fa-file-powerpoint"></i> View Presentation
+                  <i class="fas fa-file-pdf"></i> Slides
                 </a>
-              </div>
-            </div>
-
-            <div class="project-card">
-              <h3>EDP382C - Educational Psychology</h3>
-              <p>Macnamara presentation on educational psychology concepts and research findings.</p>
-              <div class="project-links">
-                <a href="Classes/EDP382C%20-%20Educational%20Psychology/EDP%20382C%20-%20Macnamara.pptx" target="_blank"
+                <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp" target="_blank"
                   rel="noopener noreferrer">
-                  <i class="fas fa-file-powerpoint"></i> View Presentation
-                </a>
-                <a href="Classes/EDP382C%20-%20Educational%20Psychology/EDP%20382C%20-%20Macnamara.pptx" download>
-                  <i class="fas fa-download"></i> Download
+                  <i class="fas fa-code"></i> tea.lisp
                 </a>
               </div>
             </div>
+          </div>
 
+          <h2 style="margin-top: 24px;">Undergraduate</h2>
+          <div class="projects-grid">
             <div class="project-card">
-              <h3>CS378 - C/C++ Threadpool Implementation</h3>
-              <p>Advanced concurrency concepts and thread pool implementation. Explored multi-threading,
-                synchronization, and concurrent programming patterns.</p>
+              <h3>CS378 — Concurrency: Threadpool</h3>
+              <p>C/C++ thread pool exploring synchronization and concurrent programming patterns.</p>
               <div class="project-links">
                 <a href="https://github.com/AllenJue/threadpool" target="_blank" rel="noopener noreferrer">
-                  <i class="fab fa-github"></i> Thread Pool Implementation
+                  <i class="fab fa-github"></i> Code
                 </a>
-                <a href="Classes/CS378%20-%20Concurrency/CS378___Final_Report.pdf" target="_blank"
+                <a href="Classes/CS378%20-%20Concurrency/threadpool.pdf" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-file-pdf"></i> Report
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <h2 style="margin-top: 24px;">Paper Presentations</h2>
+          <p class="section-note">Slides from coursework where I presented published research.</p>
+          <div class="projects-grid">
+            <div class="project-card">
+              <h3>HALP</h3>
+              <p>Google's learned cache eviction policy for the YouTube CDN (NSDI 2023).</p>
+              <div class="project-links">
+                <a href="https://research.google/pubs/halp-heuristic-aided-learned-preference-eviction-policy-for-youtube-content-delivery-network/"
+                  target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Paper
+                </a>
+                <a href="Classes/Paper%20Presentations/halp.pdf" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-file-pdf"></i> Slides
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>Alice in Warningland</h3>
+              <p>Large-scale field study of browser security warning effectiveness (USENIX Security 2013).</p>
+              <div class="project-links">
+                <a href="https://www.usenix.org/conference/usenixsecurity13/technical-sessions/presentation/akhawe"
+                  target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Paper
+                </a>
+                <a href="Classes/Paper%20Presentations/alice-in-warningland.pdf" target="_blank"
                   rel="noopener noreferrer">
-                  <i class="fas fa-file-pdf"></i> View PDF
+                  <i class="fas fa-file-pdf"></i> Slides
                 </a>
-                <a href="Classes/CS378%20-%20Concurrency/CS378___Final_Report.pdf" download>
-                  <i class="fas fa-download"></i> Download
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>Macnamara — Growth Mindset</h3>
+              <p>Systematic review and meta-analysis of growth mindset interventions (Psychological Bulletin, 2022).</p>
+              <div class="project-links">
+                <a href="https://doi.org/10.1037/bul0000352" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Paper
+                </a>
+                <a href="Classes/Paper%20Presentations/macnamara.pdf" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-file-pdf"></i> Slides
                 </a>
               </div>
             </div>
@@ -333,7 +406,6 @@
         </div>
       </section>
     </main>
-
   </div>
 </body>
 

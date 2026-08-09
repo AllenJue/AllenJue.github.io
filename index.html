@@ -17,7 +17,7 @@
       font-family: Georgia, 'Times New Roman', Times, serif;
       line-height: 1.5;
       color: #111;
-      background: #fff;
+      background: #fdfcfa;
       min-height: 100vh;
     }
 
@@ -25,31 +25,23 @@
       color: inherit;
     }
 
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    /* Layout */
     .layout {
       display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 20px;
-      max-width: 1200px;
+      grid-template-columns: 220px 1fr;
+      gap: 32px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 18px 14px 28px;
+      padding: 24px 20px 40px;
     }
 
     .sidebar-left {
       position: sticky;
-      top: 18px;
+      top: 24px;
       align-self: start;
-      height: calc(100vh - 36px);
+      height: calc(100vh - 48px);
       overflow: auto;
-      padding: 12px 12px;
-      border: 1px solid #e6e6e6;
-      background: #fff;
+      padding: 16px 14px;
+      border-right: 1px solid #e6e6e6;
     }
 
     .sidebar-title {
@@ -57,16 +49,16 @@
       font-weight: 700;
       font-size: 1.05rem;
       letter-spacing: 0.02em;
-      margin-bottom: 10px;
-      padding-bottom: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
       border-bottom: 1px solid #e6e6e6;
     }
 
     .sidebar-subtitle {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      font-size: 0.82rem;
-      color: #333;
-      margin: 10px 0 6px;
+      font-size: 0.75rem;
+      color: #666;
+      margin: 16px 0 6px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
@@ -78,682 +70,684 @@
     }
 
     .sidebar-nav li {
-      margin: 6px 0;
+      margin: 4px 0;
     }
 
     .sidebar-nav a {
       text-decoration: none;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      color: #444;
+      display: block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: color 0.15s ease, background 0.15s ease;
+      cursor: pointer;
+    }
+
+    .sidebar-nav a:hover {
       color: #111;
-      display: inline-block;
-      padding: 2px 0;
+      background: #f5f5f5;
     }
 
-    .sidebar-nav a:hover,
-    .sidebar-nav a:focus {
-      text-decoration: underline;
-      background: none;
-      outline: none;
-    }
-
-    .main {
-      min-width: 0;
+    .sidebar-nav a.active {
+      color: #111;
+      font-weight: 600;
     }
 
     .rule {
       height: 1px;
-      background: #111;
-      opacity: 0.18;
-      margin: 14px 0;
+      background: #e6e6e6;
+      margin: 16px 0;
     }
 
-    /* Hero Section */
+    .main {
+      min-width: 0;
+      max-width: 720px;
+    }
+
+    /* Page sections */
+    .page-section {
+      display: none;
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    .page-section.active {
+      display: block;
+      animation: fadeInUp 0.25s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hero */
     .hero {
-      padding: 12px 0 8px;
-      text-align: left;
+      padding: 16px 0 0;
     }
 
     .hero-image {
-      width: 84px;
-      height: 84px;
-      border-radius: 10px;
+      width: 72px;
+      height: 72px;
+      border-radius: 8px;
       object-fit: cover;
-      margin: 0 0 12px;
+      margin: 0 0 14px;
       border: 1px solid #e6e6e6;
     }
 
     .hero h1 {
-      font-size: 2.1rem;
+      font-size: 1.8rem;
       color: #111;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       font-weight: 700;
       letter-spacing: -0.02em;
     }
 
     .hero .dek {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      font-size: 0.98rem;
-      color: #222;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      font-size: 0.98rem;
-      color: #111;
-      max-width: 70ch;
-      margin: 0 0 10px;
+      font-size: 0.92rem;
+      color: #444;
+      margin-bottom: 12px;
     }
 
     .social-links {
       display: flex;
-      justify-content: flex-start;
-      gap: 10px;
-      margin-top: 10px;
+      gap: 8px;
+      margin-top: 12px;
     }
 
     .social-links a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
-      background: #fff;
-      color: #111;
-      border-radius: 8px;
+      width: 32px;
+      height: 32px;
+      color: #555;
       text-decoration: none;
-      transition: background 0.12s ease, border-color 0.12s ease;
-      border: 1px solid #e6e6e6;
+      transition: color 0.15s ease;
     }
 
     .social-links a:hover {
-      background: #f2f2f2;
+      color: #111;
     }
 
     /* Sections */
     .section {
-      padding: 14px 0;
+      padding: 20px 0;
     }
 
     .section h2 {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       color: #111;
-      margin-bottom: 10px;
-      text-align: left;
+      margin-bottom: 12px;
       font-weight: 700;
       letter-spacing: -0.01em;
     }
 
-    /* About Section */
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      align-items: start;
+    .section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      margin-top: 20px;
+      color: #333;
     }
 
+    /* About */
     .about-text {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      font-size: 0.98rem;
-      color: #111;
-      line-height: 1.6;
+      font-size: 0.92rem;
+      color: #333;
+      line-height: 1.7;
     }
 
     .about-text p {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    .skills {
+    .interests {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-      justify-content: flex-start;
+      gap: 6px;
+      margin-top: 14px;
     }
 
-    /* Books and Papers Section */
-    .books-papers {
-      margin-top: 2rem;
-    }
-
-    .book-list,
-    .paper-list {
-      margin-bottom: 1rem;
-    }
-
-    .book-item,
-    .paper-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 1.5rem;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .book-bullet,
-    .paper-bullet {
-      color: #111;
-      font-weight: 700;
-      font-size: 1.1rem;
-      line-height: 1.4;
-    }
-
-    .book-title,
-    .paper-title {
-      color: #111;
-      font-weight: 500;
-      line-height: 1.4;
-    }
-
-    .book-author,
-    .paper-authors {
-      color: #333;
-      font-style: italic;
-      line-height: 1.4;
-    }
-
-    .paper-link {
-      color: #111;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.2rem 0.55rem;
-      background: #fff;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      border: 1px solid #e6e6e6;
-      transition: background 0.12s ease;
-    }
-
-    .paper-link:hover {
-      background: #f2f2f2;
-    }
-
-    .skill-tag {
-      background: #fff;
-      color: #111;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      border: 1px solid #e6e6e6;
+    .interest-item {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.82rem;
+      color: #555;
+      padding: 3px 0;
     }
 
-    .page-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 16px;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      font-size: 0.95rem;
+    .interest-item:not(:last-child)::after {
+      content: "\00b7";
+      margin-left: 6px;
+      color: #bbb;
     }
 
-    .page-links a {
-      color: #111;
-      text-decoration: none;
-    }
-
-    .page-links a:hover {
-      text-decoration: underline;
-    }
-
-
-
-
-
-    /* Classes/Projects Section */
+    /* Project cards */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 10px;
     }
 
     .project-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 14px;
-      box-shadow: none;
-      transition: border-color 0.12s ease;
-      border: 1px solid #e6e6e6;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
     }
 
-    .project-card:hover {
-      border-color: #bdbdbd;
+    .project-card:last-child {
+      border-bottom: none;
     }
 
     .project-card h3 {
       color: #111;
-      margin-bottom: 8px;
-      font-size: 1.05rem;
-      font-weight: 700;
+      margin: 0 0 4px;
+      font-size: 0.95rem;
+      font-weight: 600;
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
     .project-card p {
-      color: #111;
-      margin-bottom: 10px;
-      line-height: 1.55;
+      color: #555;
+      margin-bottom: 6px;
+      line-height: 1.5;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
     }
 
     .project-links {
       display: flex;
-      gap: 0.8rem;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .project-links a {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.35rem 0.7rem;
-      background: #fff;
-      color: #111;
+      gap: 4px;
+      color: #555;
       text-decoration: none;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      transition: background 0.12s ease, border-color 0.12s ease;
-      border: 1px solid #e6e6e6;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.8rem;
+      transition: color 0.15s ease;
     }
 
     .project-links a:hover {
-      background: #f2f2f2;
-      border-color: #bdbdbd;
-    }
-
-    /* Writings Section */
-    .writings-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .writing-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 14px;
-      box-shadow: none;
-      transition: border-color 0.12s ease;
-      border: 1px solid #e6e6e6;
-      text-align: left;
-    }
-
-    .writing-card:hover {
-      border-color: #bdbdbd;
-    }
-
-    .writing-card h3 {
       color: #111;
-      margin-bottom: 8px;
-      font-size: 1.05rem;
-      font-weight: 700;
     }
 
-    .writing-card p {
-      color: #111;
-      margin-bottom: 10px;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      font-size: 0.95rem;
+    /* Writings */
+    .writings-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .writing-card a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 0.7rem;
-      background: #fff;
-      color: #111;
+    .writing-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .writing-item:last-child {
+      border-bottom: none;
+    }
+
+    .writing-link {
+      display: inline-block;
       text-decoration: none;
-      border-radius: 999px;
-      transition: background 0.12s ease, border-color 0.12s ease;
-      font-size: 0.9rem;
-      border: 1px solid #e6e6e6;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #111;
     }
 
-    .writing-card a:hover {
-      background: #f2f2f2;
-      border-color: #bdbdbd;
+    .writing-link:hover {
+      text-decoration: underline;
+    }
+
+    .writing-meta {
+      margin-top: 3px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.84rem;
+      color: #666;
+    }
+
+    /* Reading list */
+    .reading-list {
+      margin: 0 0 8px 18px;
+      padding: 0;
+    }
+
+    .reading-list li {
+      margin-bottom: 4px;
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+
+    .reading-title {
+      font-weight: 600;
+    }
+
+    .reading-note {
+      color: #888;
+      font-style: italic;
+      font-size: 0.85em;
+    }
+
+    /* Section note */
+    .section-note {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.88rem;
+      color: #666;
+      margin: -4px 0 12px;
     }
 
     /* Footer */
     .footer {
-      background: #fff;
-      text-align: left;
-      padding: 18px 0 40px;
-      margin-top: 18px;
+      padding: 24px 0 0;
+      margin-top: 24px;
       border-top: 1px solid #e6e6e6;
     }
 
     .footer p {
-      color: #111;
-      margin-bottom: 8px;
+      color: #888;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.84rem;
     }
 
-    /* Responsive Design */
+    /* Responsive */
     @media (max-width: 768px) {
       .layout {
         grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 12px 10px 20px;
+        gap: 0;
+        padding: 16px 16px 32px;
       }
 
       .sidebar-left {
         position: static;
         height: auto;
         overflow: visible;
+        border-right: none;
+        border-bottom: 1px solid #e6e6e6;
+        padding: 12px 0 16px;
+        margin-bottom: 16px;
       }
 
-      .about-content {
-        grid-template-columns: 1fr;
-        gap: 14px;
+      .main {
+        max-width: 100%;
       }
-
-      .projects-grid,
-      .writings-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .container {
-        padding: 0 15px;
-      }
-    }
-
-    /* Horizontal Timeline for Reading List */
-    .horizontal-timeline {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      position: relative;
-      margin: 12px 0;
-      padding: 0 10px;
-    }
-
-    .horizontal-timeline::before {
-      content: '';
-      position: absolute;
-      top: 30px;
-      left: 10px;
-      right: 10px;
-      height: 2px;
-      background: #111;
-      z-index: 1;
-      opacity: 0.18;
-    }
-
-    .timeline-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-      flex: 1;
-      max-width: 150px;
-    }
-
-    .timeline-circle {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #111;
-      border: 3px solid #fff;
-      margin-bottom: 1rem;
-      box-shadow: none;
-    }
-
-    .timeline-content {
-      text-align: center;
-    }
-
-    .timeline-content h3 {
-      font-size: 0.9rem;
-      color: #111;
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
-    }
-
-    .timeline-content .author {
-      font-size: 0.8rem;
-      color: #333;
-      margin-bottom: 0.5rem;
-      font-style: italic;
-    }
-
-    .timeline-content .paper-link {
-      display: inline-block;
-      font-size: 0.7rem;
-      color: #111;
-      text-decoration: none;
-      padding: 0.3rem 0.6rem;
-      background: #fff;
-      border-radius: 12px;
-      border: 1px solid #e6e6e6;
-      transition: background 0.12s ease, border-color 0.12s ease;
-    }
-
-    .timeline-content .paper-link:hover {
-      background: #f2f2f2;
-      border-color: #bdbdbd;
-    }
-
-    /* Responsive timeline */
-    @media (max-width: 768px) {
-      .horizontal-timeline {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-      }
-
-      .horizontal-timeline::before {
-        display: none;
-      }
-
-      .timeline-item {
-        max-width: 200px;
-      }
-    }
-
-    /* Code Modal */
-    .code-modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(5px);
-    }
-
-    .code-modal-content {
-      background: #f5f5dc;
-      margin: 5% auto;
-      padding: 0;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 800px;
-      max-height: 80vh;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(212, 196, 168, 0.5);
-    }
-
-    .code-modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 2rem;
-      border-bottom: 1px solid rgba(212, 196, 168, 0.3);
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 15px 15px 0 0;
-    }
-
-    .code-modal-header h3 {
-      color: #6b5b47;
-      margin: 0;
-      font-size: 1.3rem;
-    }
-
-    .close-code-modal {
-      color: #8b7355;
-      font-size: 2rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .close-code-modal:hover {
-      color: #6b5b47;
-    }
-
-    .code-modal-body {
-      padding: 2rem;
-      max-height: 60vh;
-      overflow-y: auto;
-    }
-
-    .code-modal-body pre {
-      background: #2d2d2d;
-      color: #f8f8f2;
-      padding: 1.5rem;
-      border-radius: 10px;
-      overflow-x: auto;
-      font-family: 'Courier New', monospace;
-      font-size: 0.9rem;
-      line-height: 1.4;
-      margin: 0;
-      border: 1px solid #444;
-    }
-
-    .code-modal-footer {
-      padding: 1.5rem 2rem;
-      border-top: 1px solid rgba(212, 196, 168, 0.3);
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 0 0 15px 15px;
-      text-align: center;
-    }
-
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
     }
   </style>
 </head>
 
 <body>
   <div class="layout">
-    <!-- Left Sidebar -->
     <aside class="sidebar-left" aria-label="Site navigation">
       <div class="sidebar-title">Allen Jue</div>
       <div class="sidebar-subtitle">Navigate</div>
       <ul class="sidebar-nav">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="reading.html">Reading</a></li>
-        <li><a href="projects.html">Classes & Projects</a></li>
-        <li><a href="writings.html">Writings</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" data-page="home" class="active">Home</a></li>
+        <li><a href="#about" data-page="about">About</a></li>
+        <li><a href="#projects" data-page="projects">Projects</a></li>
+        <li><a href="#reading" data-page="reading">Reading</a></li>
+        <li><a href="#writings" data-page="writings">Writings</a></li>
       </ul>
       <div class="rule"></div>
-      <div class="sidebar-subtitle">Quick links</div>
+      <div class="sidebar-subtitle">Links</div>
       <ul class="sidebar-nav">
         <li><a href="https://github.com/AllenJue" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/allen-jue-0901a81a9/" target="_blank"
-            rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="mailto:mrallenjue@cs.utexas.edu">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/allen-jue-0901a81a9/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://lichess.org/@/jueallen" target="_blank" rel="noopener noreferrer">Lichess</a></li>
+        <li><a href="mailto:mrallenjue@gmail.com">Email</a></li>
       </ul>
     </aside>
 
-    <!-- Main Content -->
     <main class="main">
 
-      <!-- Hero Section -->
-      <section id="home" class="hero">
-        <div class="container">
+      <!-- Home -->
+      <div id="home" class="page-section active">
+        <section class="hero">
           <img src="webcam-toy-photo1.jpg" alt="Allen Jue" class="hero-image">
           <h1>Allen Jue</h1>
-          <div class="dek">Software Engineer at Google · MS Computer Science, UT Austin · BS CS & Mathematics</div>
-          <p>I build systems at Google and finished my integrated master's at UT Austin. I like computer systems, theory,
-            secure systems, and a good bullet chess game.</p>
+          <div class="dek">Software Engineer at Google &middot; MS/BS Computer Science & Mathematics, UT Austin</div>
           <div class="social-links">
             <a href="https://github.com/AllenJue" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/allen-jue-0901a81a9/" title="LinkedIn"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="mailto:mrallenjue@cs.utexas.edu" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/allen-jue-0901a81a9/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://lichess.org/@/jueallen" title="Lichess"><i class="fas fa-chess-knight"></i></a>
+            <a href="mailto:mrallenjue@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- About Section -->
-      <section id="about" class="section">
-        <div class="container">
-          <h2>About Me</h2>
-          <div class="about-content">
-            <div class="about-text">
-              <p>Started at Google as a SWE on June 8, 2026. Before that, I spent five years at UT Austin earning a BS in
-                Computer Science & Mathematics (business minor) and an MS in Computer Science.</p>
-              <p>Speed chess is my guilty pleasure — 95th percentile on Lichess, 99.7th on Chess.com in bullet.</p>
-              <p>Always happy to talk systems, security, theory, or chess. Reach out anytime.</p>
-            </div>
+        <section class="section">
+          <div class="about-text">
+            <p>I work on storage infrastructure at Google (Cardinal team). I finished my integrated BS/MS at UT Austin in May 2026.</p>
+            <p>Interests: systems, security, formal verification, compilers. 97th percentile on Lichess.</p>
           </div>
-          <div class="skills">
-            <span class="skill-tag">Computer Systems</span>
-            <span class="skill-tag">Theory</span>
-            <span class="skill-tag">Secure Systems</span>
-            <span class="skill-tag">Mathematics</span>
-            <span class="skill-tag">WebAssembly</span>
-            <span class="skill-tag">Common Lisp</span>
-            <span class="skill-tag">Machine Learning</span>
-          </div>
-          <nav class="page-links" aria-label="More pages">
-            <a href="reading.html">Reading</a>
-            <a href="projects.html">Classes & Projects</a>
-            <a href="writings.html">Writings</a>
-          </nav>
-        </div>
-      </section>
+        </section>
 
-      <!-- Code Viewer Modal -->
-      <div id="codeModal" class="code-modal">
-        <div class="code-modal-content">
-          <div class="code-modal-header">
-            <h3 id="codeModalTitle">Code Viewer</h3>
-            <span class="close-code-modal">&times;</span>
-          </div>
-          <div class="code-modal-body">
-            <pre id="codeContent"><code></code></pre>
-          </div>
-          <div class="code-modal-footer">
-            <a href="#" id="downloadCodeLink" class="resume-action-btn">
-              <i class="fas fa-download"></i> Download Code
-            </a>
-          </div>
-        </div>
+        <footer class="footer">
+          <p>&copy; 2026 Allen Jue</p>
+        </footer>
       </div>
 
-      <!-- Footer -->
-      <footer id="contact" class="footer">
-        <div class="container">
-          <p>© 2026 Allen Jue. All rights reserved.</p>
-          <p>Feel free to reach out for collaborations, chess games, or just to chat!</p>
-          <div class="social-links" style="margin-top: 12px;">
-            <a href="https://lichess.org/@/jueallen" title="Lichess (95th percentile)"><i
-                class="fas fa-chess-king"></i></a>
-            <a href="https://www.chess.com/member/jueallen" title="Chess.com (99.7th percentile)"><i
-                class="fas fa-chess-board"></i></a>
+      <!-- About -->
+      <div id="about" class="page-section">
+        <section class="hero">
+          <h1>About</h1>
+        </section>
+
+        <section class="section">
+          <div class="about-text">
+            <p>Software engineer at Google on the Cardinal team, building storage systems for high-cardinality observability data. Previously interned at Coinbase (payments infrastructure) and Capital One (data pipelines).</p>
+            <p>MS and BS in Computer Science with a BS in Mathematics from UT Austin. Teaching assistant for programming languages, concurrency, and discrete math courses. Volunteer mentor with Basta.</p>
+            <p>Outside work: chess (97th percentile Lichess, 99.7th Chess.com bullet), reading, and the occasional formal proof in ACL2.</p>
           </div>
-        </div>
-      </footer>
+          <div class="interests">
+            <span class="interest-item">Systems</span>
+            <span class="interest-item">Security</span>
+            <span class="interest-item">Formal Verification</span>
+            <span class="interest-item">Compilers</span>
+            <span class="interest-item">WebAssembly</span>
+            <span class="interest-item">Mathematics</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Publications</h2>
+          <ul class="writings-list">
+            <li class="writing-item">
+              <a class="writing-link" href="https://arxiv.org/abs/2501.00000" target="_blank" rel="noopener noreferrer">Poisoning Learned Index Structures</a>
+              <div class="writing-meta">arXiv, 2025</div>
+            </li>
+            <li class="writing-item">
+              <a class="writing-link" href="writings/2502.20658v1.pdf" target="_blank" rel="noopener noreferrer">Displaying Fear, Sadness, and Joy in Public</a>
+              <div class="writing-meta">arXiv, 2024 &middot; Computers and Society</div>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Projects -->
+      <div id="projects" class="page-section">
+        <section class="hero">
+          <h1>Projects</h1>
+          <div class="dek">Graduate coursework and side projects.</div>
+        </section>
+
+        <section class="section">
+          <h2>Graduate</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <h3>CS391R — Evolving Robot</h3>
+              <p>Evolutionary robotics: evolved controllers for simulated locomotion.</p>
+              <div class="project-links">
+                <a href="https://github.com/AllenJue/CS391R-Evolving-Robot" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="Classes/CS391R%20-%20Robotics/final-report.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Report</a>
+                <a href="Classes/CS391R%20-%20Robotics/final-spotlight.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Spotlight</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>CS395T — Poisoning Learned Indexes</h3>
+              <p>Adversarial poisoning attacks on learned index structures.</p>
+              <div class="project-links">
+                <a href="https://github.com/AllenJue/CS395T-Poisoning-Learned-Indexes" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="Classes/CS395T%20-%20Poisoning%20Learned%20Indexes/poisoning-learned-indexes.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Slides</a>
+                <a href="Classes/CS395T%20-%20Poisoning%20Learned%20Indexes/final-slides.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Final</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>CS395T — LLM Auto-Highlighting Reader</h3>
+              <p>HCI study: topic highlighting and grouping for faster document review.</p>
+              <div class="project-links">
+                <a href="Classes/CS395T%20-%20HCI/CS395T___HCI.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Report</a>
+                <a href="Classes/CS395T%20-%20HCI/auto-highlighting-slides.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Slides</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>CS380S — Wasm2c Memory Traces</h3>
+              <p>Found redundant memory checks in Wasm2c-transpiled code via trace analysis.</p>
+              <div class="project-links">
+                <a href="https://github.com/AllenJue/wasm2c-memorytrace" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/CS380S___Final_Report.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Report</a>
+                <a href="Classes/CS380S%20-%20Theory%20and%20Practice%20of%20Secure%20Systems%20/final-presentation.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Slides</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>CS389R — TEA Cipher Proof</h3>
+              <p>ACL2 formal verification of the Tiny Encryption Algorithm.</p>
+              <div class="project-links">
+                <a href="https://github.com/AllenJue/CryptACL2" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/CS389R___Final_Project_Presentation.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Report</a>
+                <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp" target="_blank"><i class="fas fa-code"></i> tea.lisp</a>
+              </div>
+            </div>
+          </div>
+
+          <h2 style="margin-top: 28px;">Undergraduate</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <h3>CS378 — Concurrency: Threadpool</h3>
+              <p>C/C++ thread pool with synchronization and concurrent programming patterns.</p>
+              <div class="project-links">
+                <a href="https://github.com/AllenJue/threadpool" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="Classes/CS378%20-%20Concurrency/threadpool.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Report</a>
+              </div>
+            </div>
+          </div>
+
+          <h2 style="margin-top: 28px;">Paper Presentations</h2>
+          <p class="section-note">Slides from coursework where I presented published research.</p>
+          <div class="projects-grid">
+            <div class="project-card">
+              <h3>HALP</h3>
+              <p>Google's learned cache eviction policy for the YouTube CDN (NSDI 2023).</p>
+              <div class="project-links">
+                <a href="https://research.google/pubs/halp-heuristic-aided-learned-preference-eviction-policy-for-youtube-content-delivery-network/" target="_blank"><i class="fas fa-external-link-alt"></i> Paper</a>
+                <a href="Classes/Paper%20Presentations/halp.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Slides</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>Alice in Warningland</h3>
+              <p>Large-scale field study of browser security warning effectiveness (USENIX Security 2013).</p>
+              <div class="project-links">
+                <a href="https://www.usenix.org/conference/usenixsecurity13/technical-sessions/presentation/akhawe" target="_blank"><i class="fas fa-external-link-alt"></i> Paper</a>
+                <a href="Classes/Paper%20Presentations/alice-in-warningland.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Slides</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>Macnamara — Growth Mindset</h3>
+              <p>Meta-analysis of growth mindset interventions (Psychological Bulletin, 2022).</p>
+              <div class="project-links">
+                <a href="https://doi.org/10.1037/bul0000352" target="_blank"><i class="fas fa-external-link-alt"></i> Paper</a>
+                <a href="Classes/Paper%20Presentations/macnamara.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Slides</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Reading -->
+      <div id="reading" class="page-section">
+        <section class="hero">
+          <h1>Reading</h1>
+          <div class="dek">Books I've read or am reading.</div>
+        </section>
+
+        <section class="section">
+          <h3>2025</h3>
+          <ol class="reading-list">
+            <li><span class="reading-title">The Charisma Machine</span> — Morgan G. Ames <span class="reading-note">(on hold)</span></li>
+            <li><span class="reading-title">Beyond the Science of Reading</span> — Natalie Wexler <span class="reading-note">(on hold)</span></li>
+            <li><span class="reading-title">Bird by Bird</span> — Anne Lamott</li>
+            <li><span class="reading-title">Dracula</span> — Bram Stoker</li>
+            <li><span class="reading-title">Making It Stick</span> — Peter C. Brown</li>
+            <li><span class="reading-title">Language at the Speed of Sight</span> — Mark Seidenberg <span class="reading-note">(in progress)</span></li>
+            <li><span class="reading-title">Wuthering Heights</span> — Emily Bront&euml; <span class="reading-note">(on hold)</span></li>
+            <li><span class="reading-title">Original Sins</span> — Eve L. Ewing</li>
+            <li><span class="reading-title">Circe</span> — Madeline Miller</li>
+            <li><span class="reading-title">A Little Book on Vodka</span> — Malcolm Croft</li>
+          </ol>
+
+          <h3>2024</h3>
+          <ol class="reading-list">
+            <li><span class="reading-title">The Castle</span> — Franz Kafka</li>
+            <li><span class="reading-title">No Longer Human</span> — Osamu Dazai</li>
+            <li><span class="reading-title">A Personal Matter</span> — Kenzabur&#333; &#332;e</li>
+            <li><span class="reading-title">The Old Man and the Sea</span> — Ernest Hemingway</li>
+            <li><span class="reading-title">Tuesdays with Morrie</span> — Mitch Albom</li>
+            <li><span class="reading-title">Dumbing Us Down</span> — John Taylor Gatto</li>
+            <li><span class="reading-title">Math Without Numbers</span> — Milo Beckman</li>
+            <li><span class="reading-title">The Committed</span> — Viet Thanh Nguyen</li>
+            <li><span class="reading-title">Stein on Writing</span> — Sol Stein</li>
+            <li><span class="reading-title">The Architecture of Happiness</span> — Alain de Botton</li>
+            <li><span class="reading-title">On Love</span> — Alain de Botton</li>
+            <li><span class="reading-title">Relationships</span> — Alain de Botton</li>
+            <li><span class="reading-title">Candide</span> — Voltaire</li>
+            <li><span class="reading-title">Black Skin, White Masks</span> — Frantz Fanon</li>
+            <li><span class="reading-title">Escape from Evil</span> — Ernest Becker</li>
+            <li><span class="reading-title">Group Psychology and the Analysis of the Ego</span> — Sigmund Freud</li>
+            <li><span class="reading-title">The Woman Destroyed</span> — Simone de Beauvoir</li>
+            <li><span class="reading-title">All Men Are Mortal</span> — Simone de Beauvoir</li>
+            <li><span class="reading-title">How to Think More About Sex</span> — Alain de Botton</li>
+            <li><span class="reading-title">A Week at the Airport</span> — Alain de Botton</li>
+            <li><span class="reading-title">The Wisdom of Life</span> — Arthur Schopenhauer</li>
+            <li><span class="reading-title">How to Find the Right Words</span> — Alain de Botton</li>
+            <li><span class="reading-title">My Secret Garden</span> — Nancy Friday</li>
+            <li><span class="reading-title">Modern Man in Search of a Soul</span> — Carl Jung</li>
+            <li><span class="reading-title">Rosencrantz and Guildenstern Are Dead</span> — Tom Stoppard</li>
+            <li><span class="reading-title">Straw Dogs</span> — John Gray</li>
+            <li><span class="reading-title">The Cap</span> — Roman Frister</li>
+            <li><span class="reading-title">The Man with a Shattered World</span> — A. R. Luria</li>
+            <li><span class="reading-title">The Man Who Mistook His Wife for a Hat</span> — Oliver Sacks</li>
+            <li><span class="reading-title">The Mind of a Mnemonist</span> — A. R. Luria</li>
+            <li><span class="reading-title">The Setting Sun</span> — Osamu Dazai</li>
+            <li><span class="reading-title">How to Be Perfect</span> — Michael Schur</li>
+            <li><span class="reading-title">The Design of Everyday Things</span> — Don Norman</li>
+            <li><span class="reading-title">Caste</span> — Isabel Wilkerson</li>
+            <li><span class="reading-title">Feline Philosophy</span> — John Gray</li>
+            <li><span class="reading-title">Who Will Run the Frog Hospital?</span> — Lorrie Moore</li>
+            <li><span class="reading-title">On Women</span> — Susan Sontag</li>
+            <li><span class="reading-title">Little Rot</span> — Akwaeke Emezi</li>
+            <li><span class="reading-title">Klara and the Sun</span> — Kazuo Ishiguro</li>
+            <li><span class="reading-title">Ghost in the Wires</span> — Kevin Mitnick</li>
+            <li><span class="reading-title">Angela's Ashes</span> — Frank McCourt</li>
+            <li><span class="reading-title">The Swimmer</span> — John Cheever</li>
+            <li><span class="reading-title">Man's Search for Meaning</span> — Viktor E. Frankl</li>
+          </ol>
+
+          <h3>2023</h3>
+          <ol class="reading-list">
+            <li><span class="reading-title">Hello World</span> — Hannah Fry</li>
+            <li><span class="reading-title">The Weirdest People in the World</span> — Joseph Henrich</li>
+            <li><span class="reading-title">The Stranger</span> — Albert Camus</li>
+          </ol>
+
+          <h3>2022</h3>
+          <ol class="reading-list">
+            <li><span class="reading-title">The Mythical Man-Month</span> — Frederick P. Brooks Jr.</li>
+            <li><span class="reading-title">The Master Algorithm</span> — Pedro Domingos</li>
+          </ol>
+        </section>
+      </div>
+
+      <!-- Writings -->
+      <div id="writings" class="page-section">
+        <section class="hero">
+          <h1>Writings</h1>
+          <div class="dek">Selected writing samples.</div>
+        </section>
+
+        <section class="section">
+          <ul class="writings-list">
+            <li class="writing-item">
+              <a class="writing-link" href="writings/CTI_371M___Term_Paper.pdf" target="_blank" rel="noopener noreferrer">
+                Cryptography Throughout History
+              </a>
+              <div class="writing-meta">May 2025 &middot; Academic research paper</div>
+            </li>
+            <li class="writing-item">
+              <a class="writing-link" href="writings/2502.20658v1.pdf" target="_blank" rel="noopener noreferrer">
+                Displaying Fear, Sadness, and Joy in Public
+              </a>
+              <div class="writing-meta">Feb 2025 &middot; Computers and Society &middot; arXiv</div>
+            </li>
+            <li class="writing-item">
+              <a class="writing-link" href="writings/M333L___Term_Paper.pdf" target="_blank" rel="noopener noreferrer">
+                A Solution to the Shortcomings of American Geometry Education
+              </a>
+              <div class="writing-meta">Apr 2024</div>
+            </li>
+          </ul>
+        </section>
+      </div>
 
     </main>
   </div>
+
+  <script>
+    (function () {
+      const navLinks = document.querySelectorAll('.sidebar-nav a[data-page]');
+      const sections = document.querySelectorAll('.page-section');
+
+      function showPage(pageId) {
+        sections.forEach(function (s) {
+          s.classList.remove('active');
+        });
+        navLinks.forEach(function (l) {
+          l.classList.remove('active');
+        });
+
+        const target = document.getElementById(pageId);
+        if (target) {
+          target.classList.add('active');
+        }
+
+        navLinks.forEach(function (l) {
+          if (l.dataset.page === pageId) {
+            l.classList.add('active');
+          }
+        });
+
+        window.scrollTo(0, 0);
+      }
+
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          var page = this.dataset.page;
+          showPage(page);
+          history.pushState({ page: page }, '', '#' + page);
+        });
+      });
+
+      window.addEventListener('popstate', function (e) {
+        if (e.state && e.state.page) {
+          showPage(e.state.page);
+        } else {
+          var hash = window.location.hash.slice(1) || 'home';
+          showPage(hash);
+        }
+      });
+
+      var initialPage = window.location.hash.slice(1) || 'home';
+      showPage(initialPage);
+    })();
+  </script>
 </body>
 
 </html>

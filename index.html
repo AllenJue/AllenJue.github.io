@@ -212,26 +212,6 @@
       margin-bottom: 8px;
     }
 
-    .interests {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 14px;
-    }
-
-    .interest-item {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      font-size: 0.82rem;
-      color: #555;
-      padding: 3px 0;
-    }
-
-    .interest-item:not(:last-child)::after {
-      content: "\00b7";
-      margin-left: 6px;
-      color: #bbb;
-    }
-
     /* Project cards */
     .projects-grid {
       display: grid;
@@ -396,7 +376,6 @@
       <div class="sidebar-subtitle">Navigate</div>
       <ul class="sidebar-nav">
         <li><a href="#home" data-page="home" class="active">Home</a></li>
-        <li><a href="#about" data-page="about">About</a></li>
         <li><a href="#projects" data-page="projects">Projects</a></li>
         <li><a href="#reading" data-page="reading">Reading</a></li>
         <li><a href="#writings" data-page="writings">Writings</a></li>
@@ -429,51 +408,15 @@
 
         <section class="section">
           <div class="about-text">
-            <p>I work on storage infrastructure at Google (Cardinal team). I finished my integrated BS/MS at UT Austin in May 2026.</p>
-            <p>Interests: systems, security, formal verification, compilers. 97th percentile on Lichess.</p>
+            <p>Software engineer at Google on the Cardinal team, building storage systems for high-cardinality observability data. Previously interned at Coinbase and Capital One.</p>
+            <p>MS and BS in Computer Science with a BS in Mathematics from UT Austin. TA for programming languages, concurrency, and discrete math. Volunteer mentor with Basta.</p>
+            <p>Interested in sociology, computer systems, LLMs, education, theory, and math. 97th percentile on Lichess and Chess.com bullet.</p>
           </div>
         </section>
 
         <footer class="footer">
           <p>&copy; 2026 Allen Jue</p>
         </footer>
-      </div>
-
-      <!-- About -->
-      <div id="about" class="page-section">
-        <section class="hero">
-          <h1>About</h1>
-        </section>
-
-        <section class="section">
-          <div class="about-text">
-            <p>Software engineer at Google on the Cardinal team, building storage systems for high-cardinality observability data. Previously interned at Coinbase (payments infrastructure) and Capital One (data pipelines).</p>
-            <p>MS and BS in Computer Science with a BS in Mathematics from UT Austin. Teaching assistant for programming languages, concurrency, and discrete math courses. Volunteer mentor with Basta.</p>
-            <p>Outside work: chess (97th percentile Lichess, 99.7th Chess.com bullet), reading, and the occasional formal proof in ACL2.</p>
-          </div>
-          <div class="interests">
-            <span class="interest-item">Systems</span>
-            <span class="interest-item">Security</span>
-            <span class="interest-item">Formal Verification</span>
-            <span class="interest-item">Compilers</span>
-            <span class="interest-item">WebAssembly</span>
-            <span class="interest-item">Mathematics</span>
-          </div>
-        </section>
-
-        <section class="section">
-          <h2>Publications</h2>
-          <ul class="writings-list">
-            <li class="writing-item">
-              <a class="writing-link" href="https://arxiv.org/abs/2501.00000" target="_blank" rel="noopener noreferrer">Poisoning Learned Index Structures</a>
-              <div class="writing-meta">arXiv, 2025</div>
-            </li>
-            <li class="writing-item">
-              <a class="writing-link" href="writings/2502.20658v1.pdf" target="_blank" rel="noopener noreferrer">Displaying Fear, Sadness, and Joy in Public</a>
-              <div class="writing-meta">arXiv, 2024 &middot; Computers and Society</div>
-            </li>
-          </ul>
-        </section>
       </div>
 
       <!-- Projects -->
@@ -525,15 +468,6 @@
               </div>
             </div>
 
-            <div class="project-card">
-              <h3>CS389R — TEA Cipher Proof</h3>
-              <p>ACL2 formal verification of the Tiny Encryption Algorithm.</p>
-              <div class="project-links">
-                <a href="https://github.com/AllenJue/CryptACL2" target="_blank"><i class="fab fa-github"></i> Code</a>
-                <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/CS389R___Final_Project_Presentation.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Report</a>
-                <a href="Classes/CS389R%20-%20Recursion%20and%20Induction/tea.lisp" target="_blank"><i class="fas fa-code"></i> tea.lisp</a>
-              </div>
-            </div>
           </div>
 
           <h2 style="margin-top: 28px;">Undergraduate</h2>
@@ -669,22 +603,33 @@
       <div id="writings" class="page-section">
         <section class="hero">
           <h1>Writings</h1>
-          <div class="dek">Selected writing samples.</div>
+          <div class="dek">Research preprints and other writing.</div>
         </section>
 
         <section class="section">
+          <h2>Research</h2>
           <ul class="writings-list">
             <li class="writing-item">
-              <a class="writing-link" href="writings/CTI_371M___Term_Paper.pdf" target="_blank" rel="noopener noreferrer">
-                Cryptography Throughout History
+              <a class="writing-link" href="https://arxiv.org/abs/2501.00000" target="_blank" rel="noopener noreferrer">
+                Poisoning Learned Index Structures
               </a>
-              <div class="writing-meta">May 2025 &middot; Academic research paper</div>
+              <div class="writing-meta">arXiv preprint, 2025</div>
             </li>
             <li class="writing-item">
               <a class="writing-link" href="writings/2502.20658v1.pdf" target="_blank" rel="noopener noreferrer">
                 Displaying Fear, Sadness, and Joy in Public
               </a>
-              <div class="writing-meta">Feb 2025 &middot; Computers and Society &middot; arXiv</div>
+              <div class="writing-meta">arXiv preprint, 2024 &middot; Computers and Society</div>
+            </li>
+          </ul>
+
+          <h2 style="margin-top: 24px;">Other</h2>
+          <ul class="writings-list">
+            <li class="writing-item">
+              <a class="writing-link" href="writings/CTI_371M___Term_Paper.pdf" target="_blank" rel="noopener noreferrer">
+                Cryptography Throughout History
+              </a>
+              <div class="writing-meta">May 2025 &middot; Academic term paper</div>
             </li>
             <li class="writing-item">
               <a class="writing-link" href="writings/M333L___Term_Paper.pdf" target="_blank" rel="noopener noreferrer">
